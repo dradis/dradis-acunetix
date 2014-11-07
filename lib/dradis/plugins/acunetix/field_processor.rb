@@ -2,7 +2,7 @@ module Dradis::Plugins::Acunetix
   class FieldProcessor < Dradis::Plugins::Upload::FieldProcessor
 
     def post_initialize(args={})
-      # @acunetix_object = (data.name == 'Scan') ? ::Nessus::Host.new(data) : ::Nessus::ReportItem.new(data)
+      @acunetix_object = (data.name == 'Scan') ? ::Acunetix::Scan.new(data) : ::Acunetix::ReportItem.new(data)
     end
 
     def value(args={})
@@ -12,17 +12,7 @@ module Dradis::Plugins::Acunetix
       # is common across all fields for a given template (and meaningless).
       _, name = field.split('.')
 
-      tag_name = if name == 'start_url'
-                  'StartURL'
-                else
-                  name.camelcase
-                end
-
-      if tag = data.at_xpath("./#{tag_name}")
-        tag.text()
-      else
-        'n/a'
-      end
+      @acunetix_object.try(name) || 'n/a'
     end
   end
 
