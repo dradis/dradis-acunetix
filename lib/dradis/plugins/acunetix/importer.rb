@@ -33,7 +33,7 @@ module Dradis::Plugins::Acunetix
 
       start_url = URI::parse(xml_scan.at_xpath('./StartURL').text()).host
 
-      scan_node = content_service.create_node(label: start_url, type: :host)
+      self.scan_node = content_service.create_node(label: start_url, type: :host)
       logger.info{ "\tScan start URL: #{start_url}" }
 
       scan_note = template_service.process_template(template: 'scan', data: xml_scan)
@@ -51,6 +51,7 @@ module Dradis::Plugins::Acunetix
       issue_text = template_service.process_template(template: 'report_item', data: xml_report_item)
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
 
+      logger.info{ "\t\t => Creating new evidence" }
       evidence_content = template_service.process_template(template: 'evidence', data: xml_report_item)
       content_service.create_evidence(issue: issue, node: scan_node, content: evidence_content)
     end
