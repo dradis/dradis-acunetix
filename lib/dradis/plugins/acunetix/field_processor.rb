@@ -1,4 +1,6 @@
 module Dradis::Plugins::Acunetix
+  # This processor defers to ::Acunetix::Scan for the scan template and to
+  # ::Acunetix::ReportItem for the report_item and evidence templates.
   class FieldProcessor < Dradis::Plugins::Upload::FieldProcessor
 
     def post_initialize(args={})

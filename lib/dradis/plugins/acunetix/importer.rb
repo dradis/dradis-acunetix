@@ -27,6 +27,7 @@ module Dradis::Plugins::Acunetix
 
 
     private
+    attr_accessor :scan_node
 
     def process_scan(xml_scan)
 
@@ -49,6 +50,9 @@ module Dradis::Plugins::Acunetix
 
       issue_text = template_service.process_template(template: 'report_item', data: xml_report_item)
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
+
+      evidence_content = template_service.process_template(template: 'evidence', data: xml_report_item)
+      content_service.create_evidence(issue: issue, node: scan_node, content: evidence_content)
     end
   end
 end
