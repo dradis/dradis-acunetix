@@ -44,7 +44,11 @@ module Dradis::Plugins::Acunetix
     end
 
     def process_report_item(xml_report_item)
-      # TODO
+      plugin_id = xml_report_item.at_xpath('./ModuleName').text()
+      logger.info{ "\t\t => Creating new issue (plugin_id: #{plugin_id})" }
+
+      issue_text = template_service.process_template(template: 'report_item', data: xml_report_item)
+      issue = content_service.create_issue(text: issue_text, id: plugin_id)
     end
   end
 end
