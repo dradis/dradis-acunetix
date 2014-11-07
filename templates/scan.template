@@ -1,3 +1,6 @@
+#[Title]#
+Acunetix scanner notes (%scan.start_time%)
+
 #[ScanName]#
 %scan.name%
 
