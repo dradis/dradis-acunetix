@@ -26,6 +26,11 @@ module Acunetix
         :name, :module_name, :severity, :type, :impact, :description,
         :detailed_information, :recommendation, :cwe,
 
+        # tags that correspond to Evidence
+        :details, :affects, :parameter, :aop_source_file, :aop_source_line,
+        :aop_additional, :is_false_positive,
+
+
         # nested tags
         :request, :response,
         :cvss_descriptor, :cvss_score,
@@ -33,7 +38,6 @@ module Acunetix
         # multiple tags
         :cve_list, :references
         ]
-
     end
 
     # This allows external callers (and specs) to check for implemented
@@ -65,6 +69,9 @@ module Acunetix
       # tags.
       translations_table = {
                     cwe: 'CWE',
+        aop_source_file: 'AOPSourceFile',
+        aop_source_line: 'AOPSourceLine',
+         aop_additional: 'AOPAdditional',
                 request: 'TechnicalDetails/Request',
                response: 'TechnicalDetails/Response',
         cvss_descriptor: 'CVSS/Descriptor',
@@ -82,7 +89,7 @@ module Acunetix
       # then we try the children tags
       tag = xml.at_xpath("./#{method_name}")
       if tag && !tag.text.blank?
-        if [:description, :detailed_information, :impact].include?(method)
+        if tags_with_html_content.include?(method)
           return cleanup_html(tag.text)
         else
           return tag.text
@@ -102,12 +109,16 @@ module Acunetix
     def cleanup_html(source)
       result = source.dup
       result.gsub!(/&quot;/, '"')
+      result.gsub!(/&amp;/, '&')
+      result.gsub!(/&lt;/, '<')
+      result.gsub!(/&gt;/, '>')
 
-      result.gsub!(/<b>(.*)?<\/b>/, '*\1*')
+      result.gsub!(/<b>(.*?)<\/b>/, '*\1*')
       result.gsub!(/<br\/>/, "\n")
-      result.gsub!(/<h2>(.*)?<\/h2>/, '*\1*')
-      result.gsub!(/<i>(.*)?<\/i>/, '\1')
-      result.gsub!(/<p>(.*)?<\/p>/, '\1')
+      result.gsub!(/<font.*?>(.*?)<\/font>/, '\1')
+      result.gsub!(/<h2>(.*?)<\/h2>/, '*\1*')
+      result.gsub!(/<i>(.*?)<\/i>/, '\1')
+      result.gsub!(/<p>(.*?)<\/p>/, '\1')
 
       result.gsub!(/<[\/]*ul>/, '')
       result.gsub!(/<li>(.*)?<\/li>/, '* \1')
@@ -125,5 +136,11 @@ module Acunetix
       end
       references
     end
+
+    # Some of the values have embedded HTML conent that we need to strip
+    def tags_with_html_content
+      [:details, :description, :detailed_information, :impact]
+    end
+
   end
 end
