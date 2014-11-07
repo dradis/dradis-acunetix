@@ -81,13 +81,14 @@ module Acunetix
 
       # then we try the children tags
       tag = xml.at_xpath("./#{method_name}")
-      if tag
-
-        if [:description, :detailed_information].include?(method)
+      if tag && !tag.text.blank?
+        if [:description, :detailed_information, :impact].include?(method)
           return cleanup_html(tag.text)
         else
           return tag.text
         end
+      else
+        'n/a'
       end
 
       return 'unimplemented'   if method == :cve_list
@@ -107,6 +108,9 @@ module Acunetix
       result.gsub!(/<h2>(.*)?<\/h2>/, '*\1*')
       result.gsub!(/<i>(.*)?<\/i>/, '\1')
       result.gsub!(/<p>(.*)?<\/p>/, '\1')
+
+      result.gsub!(/<[\/]*ul>/, '')
+      result.gsub!(/<li>(.*)?<\/li>/, '* \1')
 
       result
     end
