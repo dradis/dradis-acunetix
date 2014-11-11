@@ -1,6 +1,6 @@
 # Acunetix plugin for Dradis
 
-[![Build Status](https://secure.travis-ci.org/dradis/dradis-acunetix.png?branch=master)](http://travis-ci.org/dradis/dradis-acunetix)
+[![Build Status](https://secure.travis-ci.org/dradis/dradis-acunetix.png?branch=master)](http://travis-ci.org/dradis/dradis-acunetix) [![Code Climate](https://codeclimate.com/github/dradis/dradis-acunetix.png)](https://codeclimate.com/github/dradis/dradis-acunetix.png)
 
 The Acunetix add-on enables users to upload Acunexit XML files to create a structure of nodes/notes that contain the same information about the hosts/ports/services as the original file.
 
