@@ -1,0 +1,1691 @@
+<?xml version="1.0"?>
+<ScanGroup ExportedOn="23/10/2014, 11:44">
+  <Scan>
+    <Name><![CDATA[Scan Thread 1 ( http://testphp.vulnweb.com:80/ )]]></Name>
+    <ShortName><![CDATA[Scan Thread 1]]></ShortName>
+    <StartURL><![CDATA[http://testphp.vulnweb.com:80/]]></StartURL>
+    <StartTime><![CDATA[7/10/2014, 11:56:03]]></StartTime>
+    <FinishTime><![CDATA[7/10/2014, 15:20:55]]></FinishTime>
+    <ScanTime><![CDATA[3 hours, 24 minutes]]></ScanTime>
+    <Aborted><![CDATA[False]]></Aborted>
+    <Responsive><![CDATA[True]]></Responsive>
+    <Banner><![CDATA[nginx/1.4.1]]></Banner>
+    <Os><![CDATA[Unknown]]></Os>
+    <WebServer><![CDATA[nginx]]></WebServer>
+    <Technologies><![CDATA[PHP]]></Technologies>
+    <Crawler StartUrl="http://testphp.vulnweb.com/">
+      <LoginSequence>
+   </LoginSequence>
+      <Cookies>
+        <Variable Name="login" Type="Cookie">
+     </Variable>
+        <Variable Name="mycookie" Type="Cookie">
+     </Variable>
+      </Cookies>
+      <SiteFiles>
+        <SiteFile id="1">
+          <Name/>
+          <URL>/</URL>
+          <FullURL>http://testphp.vulnweb.com/</FullURL>
+          <Inputs>
+            <Variable Name="Host" Type="HTTP Header">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="2">
+          <Name>search.php</Name>
+          <URL>/search.php</URL>
+          <FullURL>http://testphp.vulnweb.com/search.php</FullURL>
+          <Inputs>
+            <Variable Name="test" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="goButton" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="goButton" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="test" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="searchFor" Type="URL encoded POST">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/search.php?test=query</URL>
+              <PostData><![CDATA[goButton=go&amp;searchFor=]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/search.php?test=query</URL>
+              <PostData><![CDATA[goButton=go&amp;searchFor=the]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="3">
+          <Name>hpp</Name>
+          <URL>/hpp/</URL>
+          <FullURL>http://testphp.vulnweb.com/hpp/</FullURL>
+          <Inputs>
+            <Variable Name="pp" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/hpp/?pp=12</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="4">
+          <Name>params.php</Name>
+          <URL>/hpp/params.php</URL>
+          <FullURL>http://testphp.vulnweb.com/hpp/params.php</FullURL>
+          <Inputs>
+            <Variable Name="p" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="p" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="aaaa/" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="aaaa/" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="aaaa/" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="aaaa/" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/hpp/params.php?aaaa/=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/hpp/params.php?p=valid&amp;pp=12</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="5">
+          <Name>index.php</Name>
+          <URL>/hpp/index.php</URL>
+          <FullURL>http://testphp.vulnweb.com/hpp/index.php</FullURL>
+          <Inputs>
+            <Variable Name="pp" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/hpp/index.php?pp=12</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="6">
+          <Name>test.php</Name>
+          <URL>/hpp/test.php</URL>
+          <FullURL>http://testphp.vulnweb.com/hpp/test.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="7">
+          <Name>cart.php</Name>
+          <URL>/cart.php</URL>
+          <FullURL>http://testphp.vulnweb.com/cart.php</FullURL>
+          <Inputs>
+            <Variable Name="addcart" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="addcart" Type="URL encoded POST">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/cart.php</URL>
+              <PostData><![CDATA[addcart=3&amp;price=986]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/cart.php</URL>
+              <PostData><![CDATA[addcart=2&amp;price=800]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/cart.php</URL>
+              <PostData><![CDATA[addcart=4&amp;price=1000]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="8">
+          <Name>index.php</Name>
+          <URL>/index.php</URL>
+          <FullURL>http://testphp.vulnweb.com/index.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="9">
+          <Name>login.php</Name>
+          <URL>/login.php</URL>
+          <FullURL>http://testphp.vulnweb.com/login.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="10">
+          <Name>style.css</Name>
+          <URL>/style.css</URL>
+          <FullURL>http://testphp.vulnweb.com/style.css</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="11">
+          <Name>artists.php</Name>
+          <URL>/artists.php</URL>
+          <FullURL>http://testphp.vulnweb.com/artists.php</FullURL>
+          <Inputs>
+            <Variable Name="artist" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/artists.php?artist=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/artists.php?artist=2</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/artists.php?artist=3</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="12">
+          <Name>privacy.php</Name>
+          <URL>/privacy.php</URL>
+          <FullURL>http://testphp.vulnweb.com/privacy.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="13">
+          <Name>userinfo.php</Name>
+          <URL>/userinfo.php</URL>
+          <FullURL>http://testphp.vulnweb.com/userinfo.php</FullURL>
+          <Inputs>
+            <Variable Name="pass" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="pass" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="uname" Type="URL encoded POST">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/userinfo.php</URL>
+              <PostData><![CDATA[pass=g00dPa%24%24w0rD&amp;uname=xgwkrkop]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="14">
+          <Name>guestbook.php</Name>
+          <URL>/guestbook.php</URL>
+          <FullURL>http://testphp.vulnweb.com/guestbook.php</FullURL>
+          <Inputs>
+            <Variable Name="name" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="name" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="name" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="name" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="name" Type="URL encoded POST">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/guestbook.php</URL>
+              <PostData><![CDATA[name=anonymous%20user&amp;submit=add%20message&amp;text=1]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="15">
+          <Name>categories.php</Name>
+          <URL>/categories.php</URL>
+          <FullURL>http://testphp.vulnweb.com/categories.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="16">
+          <Name>Flash</Name>
+          <URL>/Flash/</URL>
+          <FullURL>http://testphp.vulnweb.com/Flash/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="17">
+          <Name>add.swf</Name>
+          <URL>/Flash/add.swf</URL>
+          <FullURL>http://testphp.vulnweb.com/Flash/add.swf</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="18">
+          <Name>add.fla</Name>
+          <URL>/Flash/add.fla</URL>
+          <FullURL>http://testphp.vulnweb.com/Flash/add.fla</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="19">
+          <Name>AJAX</Name>
+          <URL>/AJAX/</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="20">
+          <Name>index.php</Name>
+          <URL>/AJAX/index.php</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/index.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="21">
+          <Name>infotitle.php</Name>
+          <URL>/AJAX/infotitle.php</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/infotitle.php</FullURL>
+          <Inputs>
+            <Variable Name="id" Type="URL encoded POST">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infotitle.php</URL>
+              <PostData><![CDATA[id=1]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infotitle.php</URL>
+              <PostData><![CDATA[id=2]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infotitle.php</URL>
+              <PostData><![CDATA[id=3]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="22">
+          <Name>artists.php</Name>
+          <URL>/AJAX/artists.php</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/artists.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="23">
+          <Name>infoartist.php</Name>
+          <URL>/AJAX/infoartist.php</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/infoartist.php</FullURL>
+          <Inputs>
+            <Variable Name="id" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infoartist.php?id=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infoartist.php?id=2</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infoartist.php?id=3</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="24">
+          <Name>titles.php</Name>
+          <URL>/AJAX/titles.php</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/titles.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="25">
+          <Name>showxml.php</Name>
+          <URL>/AJAX/showxml.php</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/showxml.php</FullURL>
+          <Inputs>
+            <Variable Name="text/xml" Type="Custom POST">
+       </Variable>
+            <Variable Name="xml.node:name" Type="XML">
+       </Variable>
+            <Variable Name="xml.node:name" Type="XML">
+       </Variable>
+            <Variable Name="xml.node:name" Type="XML">
+       </Variable>
+            <Variable Name="xml.node:name" Type="XML">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/showxml.php</URL>
+              <PostData><![CDATA[&lt;xml&gt;&lt;node name=&quot;nodename1&quot;&gt;nodetext1&lt;/node&gt;&lt;node name=&quot;nodename2&quot;&gt;nodetext2&lt;/node&gt;&lt;/xml&gt;]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="26">
+          <Name>styles.css</Name>
+          <URL>/AJAX/styles.css</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/styles.css</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="27">
+          <Name>infocateg.php</Name>
+          <URL>/AJAX/infocateg.php</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/infocateg.php</FullURL>
+          <Inputs>
+            <Variable Name="id" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infocateg.php?id=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infocateg.php?id=2</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/AJAX/infocateg.php?id=3</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="28">
+          <Name>categories.php</Name>
+          <URL>/AJAX/categories.php</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/categories.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="29">
+          <Name>htaccess.conf</Name>
+          <URL>/AJAX/htaccess.conf</URL>
+          <FullURL>http://testphp.vulnweb.com/AJAX/htaccess.conf</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="30">
+          <Name>disclaimer.php</Name>
+          <URL>/disclaimer.php</URL>
+          <FullURL>http://testphp.vulnweb.com/disclaimer.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="31">
+          <Name>images</Name>
+          <URL>/images/</URL>
+          <FullURL>http://testphp.vulnweb.com/images/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="32">
+          <Name>Mod_Rewrite_Shop</Name>
+          <URL>/Mod_Rewrite_Shop/</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="33">
+          <Name>images</Name>
+          <URL>/Mod_Rewrite_Shop/images/</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/images/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="34">
+          <Name>index.php</Name>
+          <URL>/Mod_Rewrite_Shop/index.php</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/index.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="35">
+          <Name>rate.php</Name>
+          <URL>/Mod_Rewrite_Shop/rate.php</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/rate.php</FullURL>
+          <Inputs>
+            <Variable Name="id" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="36">
+          <Name>details.php</Name>
+          <URL>/Mod_Rewrite_Shop/details.php</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/details.php</FullURL>
+          <Inputs>
+            <Variable Name="id" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="37">
+          <Name>buy.php</Name>
+          <URL>/Mod_Rewrite_Shop/buy.php</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/buy.php</FullURL>
+          <Inputs>
+            <Variable Name="id" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="38">
+          <Name>.htaccess</Name>
+          <URL>/Mod_Rewrite_Shop/.htaccess</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/.htaccess</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="39">
+          <Name>Details</Name>
+          <URL>/Mod_Rewrite_Shop/Details</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="40">
+          <Name>color-printer</Name>
+          <URL>/Mod_Rewrite_Shop/Details/color-printer</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="41">
+          <Name>3</Name>
+          <URL>/Mod_Rewrite_Shop/Details/color-printer/3/</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="42">
+          <Name>web-camera-a4tech</Name>
+          <URL>/Mod_Rewrite_Shop/Details/web-camera-a4tech</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="43">
+          <Name>2</Name>
+          <URL>/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="44">
+          <Name>network-attached-storage-dlink</Name>
+          <URL>/Mod_Rewrite_Shop/Details/network-attached-storage-dlink</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="45">
+          <Name>1</Name>
+          <URL>/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/</URL>
+          <FullURL>http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="46">
+          <Name>secured</Name>
+          <URL>/secured/</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="47">
+          <Name>newuser.php</Name>
+          <URL>/secured/newuser.php</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/newuser.php</FullURL>
+          <Inputs>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="signup" Type="URL encoded POST">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/secured/newuser.php</URL>
+              <PostData><![CDATA[signup=signup&amp;uaddress=3137%20Laguna%20Street&amp;ucc=4111111111111111&amp;uemail=sample%40email.tst&amp;upass=g00dPa%24%24w0rD&amp;upass2=g00dPa%24%24w0rD&amp;uphone=555-666-0606&amp;urname=murdtvwl&amp;uuname=bsyoxcby]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="48">
+          <Name>index.php</Name>
+          <URL>/secured/index.php</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/index.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="49">
+          <Name>office.htm</Name>
+          <URL>/secured/office.htm</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/office.htm</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="50">
+          <Name>style.css</Name>
+          <URL>/secured/style.css</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/style.css</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="51">
+          <Name>phpinfo.php</Name>
+          <URL>/secured/phpinfo.php</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/phpinfo.php</FullURL>
+          <Inputs>
+            <Variable Name="" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/secured/phpinfo.php?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/secured/phpinfo.php?=PHPE9568F35-D428-11d2-A769-00AA001ACF42</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/secured/phpinfo.php?=PHPE9568F34-D428-11d2-A769-00AA001ACF42</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="52">
+          <Name>database_connect.php</Name>
+          <URL>/secured/database_connect.php</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/database_connect.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="53">
+          <Name>office_files</Name>
+          <URL>/secured/office_files</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/office_files</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="54">
+          <Name>filelist.xml</Name>
+          <URL>/secured/office_files/filelist.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/secured/office_files/filelist.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="55">
+          <Name>sendcommand.php</Name>
+          <URL>/sendcommand.php</URL>
+          <FullURL>http://testphp.vulnweb.com/sendcommand.php</FullURL>
+          <Inputs>
+            <Variable Name="cart_id" Type="URL encoded POST">
+       </Variable>
+          </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="56">
+          <Name>.idea</Name>
+          <URL>/.idea/</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="57">
+          <Name>misc.xml</Name>
+          <URL>/.idea/misc.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/misc.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="58">
+          <Name>vcs.xml</Name>
+          <URL>/.idea/vcs.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/vcs.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="59">
+          <Name>workspace.xml</Name>
+          <URL>/.idea/workspace.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/workspace.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="60">
+          <Name>.name</Name>
+          <URL>/.idea/.name</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/.name</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="61">
+          <Name>scopes</Name>
+          <URL>/.idea/scopes/</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/scopes/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="62">
+          <Name>scope_settings.xml</Name>
+          <URL>/.idea/scopes/scope_settings.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/scopes/scope_settings.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="63">
+          <Name>acuart.iml</Name>
+          <URL>/.idea/acuart.iml</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/acuart.iml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="64">
+          <Name>modules.xml</Name>
+          <URL>/.idea/modules.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/modules.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="65">
+          <Name>encodings.xml</Name>
+          <URL>/.idea/encodings.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/.idea/encodings.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="66">
+          <Name>CVS</Name>
+          <URL>/CVS/</URL>
+          <FullURL>http://testphp.vulnweb.com/CVS/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="67">
+          <Name>Entries.Log</Name>
+          <URL>/CVS/Entries.Log</URL>
+          <FullURL>http://testphp.vulnweb.com/CVS/Entries.Log</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="68">
+          <Name>Repository</Name>
+          <URL>/CVS/Repository</URL>
+          <FullURL>http://testphp.vulnweb.com/CVS/Repository</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="69">
+          <Name>Root</Name>
+          <URL>/CVS/Root</URL>
+          <FullURL>http://testphp.vulnweb.com/CVS/Root</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="70">
+          <Name>Entries</Name>
+          <URL>/CVS/Entries</URL>
+          <FullURL>http://testphp.vulnweb.com/CVS/Entries</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="71">
+          <Name>redir.php</Name>
+          <URL>/redir.php</URL>
+          <FullURL>http://testphp.vulnweb.com/redir.php</FullURL>
+          <Inputs>
+            <Variable Name="r" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/redir.php?r=http://www.eclectasy.com/Fractal-Explorer/index.html</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="72">
+          <Name>_mmServerScripts</Name>
+          <URL>/_mmServerScripts/</URL>
+          <FullURL>http://testphp.vulnweb.com/_mmServerScripts/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="73">
+          <Name>MMHTTPDB.php</Name>
+          <URL>/_mmServerScripts/MMHTTPDB.php</URL>
+          <FullURL>http://testphp.vulnweb.com/_mmServerScripts/MMHTTPDB.php</FullURL>
+          <Inputs>
+            <Variable Name="Type" Type="URL encoded POST">
+       </Variable>
+          </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="74">
+          <Name>mysql.php</Name>
+          <URL>/_mmServerScripts/mysql.php</URL>
+          <FullURL>http://testphp.vulnweb.com/_mmServerScripts/mysql.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="75">
+          <Name>comment.php</Name>
+          <URL>/comment.php</URL>
+          <FullURL>http://testphp.vulnweb.com/comment.php</FullURL>
+          <Inputs>
+            <Variable Name="aid" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="aid" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="pid" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="comment" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="comment" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="comment" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="comment" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="comment" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="comment" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="comment" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="comment" Type="URL encoded POST">
+       </Variable>
+            <Variable Name="name" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="name" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="aid" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="pid" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="aid" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="aid" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/comment.php</URL>
+              <PostData><![CDATA[comment=1&amp;name=&lt;your%20name%20here&gt;&amp;phpaction=echo%20%24_POST%5bcomment%5d;&amp;Submit=Submit]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/comment.php?aid=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/comment.php?aid=2</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/comment.php?aid=3</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/comment.php?pid=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/comment.php?pid=2</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/comment.php?pid=3</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="76">
+          <Name>wvstests</Name>
+          <URL>/wvstests/</URL>
+          <FullURL>http://testphp.vulnweb.com/wvstests/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="77">
+          <Name>pmwiki_2_1_19</Name>
+          <URL>/wvstests/pmwiki_2_1_19/</URL>
+          <FullURL>http://testphp.vulnweb.com/wvstests/pmwiki_2_1_19/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="78">
+          <Name>scripts</Name>
+          <URL>/wvstests/pmwiki_2_1_19/scripts/</URL>
+          <FullURL>http://testphp.vulnweb.com/wvstests/pmwiki_2_1_19/scripts/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="79">
+          <Name>version.php</Name>
+          <URL>/wvstests/pmwiki_2_1_19/scripts/version.php</URL>
+          <FullURL>http://testphp.vulnweb.com/wvstests/pmwiki_2_1_19/scripts/version.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="80">
+          <Name>pictures</Name>
+          <URL>/pictures/</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="81">
+          <Name>6.jpg.tn</Name>
+          <URL>/pictures/6.jpg.tn</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/6.jpg.tn</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="82">
+          <Name>3.jpg.tn</Name>
+          <URL>/pictures/3.jpg.tn</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/3.jpg.tn</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="83">
+          <Name>WS_FTP.LOG</Name>
+          <URL>/pictures/WS_FTP.LOG</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/WS_FTP.LOG</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="84">
+          <Name>wp-config.bak</Name>
+          <URL>/pictures/wp-config.bak</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/wp-config.bak</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="85">
+          <Name>ipaddresses.txt</Name>
+          <URL>/pictures/ipaddresses.txt</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/ipaddresses.txt</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="86">
+          <Name>path-disclosure-win.html</Name>
+          <URL>/pictures/path-disclosure-win.html</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/path-disclosure-win.html</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="87">
+          <Name>2.jpg.tn</Name>
+          <URL>/pictures/2.jpg.tn</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/2.jpg.tn</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="88">
+          <Name>5.jpg.tn</Name>
+          <URL>/pictures/5.jpg.tn</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/5.jpg.tn</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="89">
+          <Name>credentials.txt</Name>
+          <URL>/pictures/credentials.txt</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/credentials.txt</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="90">
+          <Name>4.jpg.tn</Name>
+          <URL>/pictures/4.jpg.tn</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/4.jpg.tn</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="91">
+          <Name>7.jpg.tn</Name>
+          <URL>/pictures/7.jpg.tn</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/7.jpg.tn</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="92">
+          <Name>path-disclosure-unix.html</Name>
+          <URL>/pictures/path-disclosure-unix.html</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/path-disclosure-unix.html</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="93">
+          <Name>1.jpg.tn</Name>
+          <URL>/pictures/1.jpg.tn</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/1.jpg.tn</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="94">
+          <Name>8.jpg.tn</Name>
+          <URL>/pictures/8.jpg.tn</URL>
+          <FullURL>http://testphp.vulnweb.com/pictures/8.jpg.tn</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="95">
+          <Name>logout.php</Name>
+          <URL>/logout.php</URL>
+          <FullURL>http://testphp.vulnweb.com/logout.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="96">
+          <Name>adm1nPan3l</Name>
+          <URL>/adm1nPan3l/</URL>
+          <FullURL>http://testphp.vulnweb.com/adm1nPan3l/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="97">
+          <Name>index.php</Name>
+          <URL>/adm1nPan3l/index.php</URL>
+          <FullURL>http://testphp.vulnweb.com/adm1nPan3l/index.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="98">
+          <Name>admin</Name>
+          <URL>/admin/</URL>
+          <FullURL>http://testphp.vulnweb.com/admin/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="99">
+          <Name>create.sql</Name>
+          <URL>/admin/create.sql</URL>
+          <FullURL>http://testphp.vulnweb.com/admin/create.sql</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="100">
+          <Name>404.php</Name>
+          <URL>/404.php</URL>
+          <FullURL>http://testphp.vulnweb.com/404.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="101">
+          <Name>Templates</Name>
+          <URL>/Templates/</URL>
+          <FullURL>http://testphp.vulnweb.com/Templates/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="102">
+          <Name>main_dynamic_template.dwt.php</Name>
+          <URL>/Templates/main_dynamic_template.dwt.php</URL>
+          <FullURL>http://testphp.vulnweb.com/Templates/main_dynamic_template.dwt.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="103">
+          <Name>index.bak</Name>
+          <URL>/index.bak</URL>
+          <FullURL>http://testphp.vulnweb.com/index.bak</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="104">
+          <Name>product.php</Name>
+          <URL>/product.php</URL>
+          <FullURL>http://testphp.vulnweb.com/product.php</FullURL>
+          <Inputs>
+            <Variable Name="pic" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/product.php?pic=2</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/product.php?pic=3</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/product.php?pic=4</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="105">
+          <Name>listproducts.php</Name>
+          <URL>/listproducts.php</URL>
+          <FullURL>http://testphp.vulnweb.com/listproducts.php</FullURL>
+          <Inputs>
+            <Variable Name="cat" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="artist" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="artist" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="artist" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/listproducts.php?cat=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/listproducts.php?cat=2</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/listproducts.php?cat=4</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/listproducts.php?artist=2</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/listproducts.php?artist=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/listproducts.php?artist=3</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="106">
+          <Name>clientaccesspolicy.xml</Name>
+          <URL>/clientaccesspolicy.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/clientaccesspolicy.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="107">
+          <Name>showimage.php</Name>
+          <URL>/showimage.php</URL>
+          <FullURL>http://testphp.vulnweb.com/showimage.php</FullURL>
+          <Inputs>
+            <Variable Name="file" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="file" Type="URL encoded GET">
+       </Variable>
+            <Variable Name="file" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg&amp;size=160</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg&amp;size=160</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg&amp;size=160</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg&amp;size=160</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg&amp;size=160</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg&amp;size=160</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg&amp;size=160</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="108">
+          <Name>signup.php</Name>
+          <URL>/signup.php</URL>
+          <FullURL>http://testphp.vulnweb.com/signup.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="109">
+          <Name>clearguestbook.php</Name>
+          <URL>/clearguestbook.php</URL>
+          <FullURL>http://testphp.vulnweb.com/clearguestbook.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="110">
+          <Name>bxss</Name>
+          <URL>/bxss/</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="111">
+          <Name>cleanDatabase.php</Name>
+          <URL>/bxss/cleanDatabase.php</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/cleanDatabase.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="112">
+          <Name>index.php</Name>
+          <URL>/bxss/index.php</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/index.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="113">
+          <Name>test.js</Name>
+          <URL>/bxss/test.js</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/test.js</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="114">
+          <Name>adminPan3l</Name>
+          <URL>/bxss/adminPan3l/</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/adminPan3l/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="115">
+          <Name>index.php</Name>
+          <URL>/bxss/adminPan3l/index.php</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/adminPan3l/index.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="116">
+          <Name>style.css</Name>
+          <URL>/bxss/adminPan3l/style.css</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/adminPan3l/style.css</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="117">
+          <Name>vuln.php</Name>
+          <URL>/bxss/vuln.php</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/vuln.php</FullURL>
+          <Inputs>
+            <Variable Name="id" Type="URL encoded GET">
+       </Variable>
+          </Inputs>
+          <Variations>
+            <Variation>
+              <URL>http://testphp.vulnweb.com/bxss/vuln.php?id=1</URL>
+              <PostData><![CDATA[]]></PostData>
+            </Variation>
+          </Variations>
+        </SiteFile>
+        <SiteFile id="118">
+          <Name>database_connect.php</Name>
+          <URL>/bxss/database_connect.php</URL>
+          <FullURL>http://testphp.vulnweb.com/bxss/database_connect.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="119">
+          <Name>crossdomain.xml</Name>
+          <URL>/crossdomain.xml</URL>
+          <FullURL>http://testphp.vulnweb.com/crossdomain.xml</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="120">
+          <Name>Connections</Name>
+          <URL>/Connections/</URL>
+          <FullURL>http://testphp.vulnweb.com/Connections/</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="121">
+          <Name>DB_Connection.php</Name>
+          <URL>/Connections/DB_Connection.php</URL>
+          <FullURL>http://testphp.vulnweb.com/Connections/DB_Connection.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="122">
+          <Name>database_connect.php</Name>
+          <URL>/database_connect.php</URL>
+          <FullURL>http://testphp.vulnweb.com/database_connect.php</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="123">
+          <Name>medias</Name>
+          <URL>/medias</URL>
+          <FullURL>http://testphp.vulnweb.com/medias</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="124">
+          <Name>img</Name>
+          <URL>/medias/img</URL>
+          <FullURL>http://testphp.vulnweb.com/medias/img</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="125">
+          <Name>css</Name>
+          <URL>/medias/css</URL>
+          <FullURL>http://testphp.vulnweb.com/medias/css</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="126">
+          <Name>main.css</Name>
+          <URL>/medias/css/main.css</URL>
+          <FullURL>http://testphp.vulnweb.com/medias/css/main.css</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="127">
+          <Name>js</Name>
+          <URL>/medias/js</URL>
+          <FullURL>http://testphp.vulnweb.com/medias/js</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+        <SiteFile id="128">
+          <Name>common_functions.js</Name>
+          <URL>/medias/js/common_functions.js</URL>
+          <FullURL>http://testphp.vulnweb.com/medias/js/common_functions.js</FullURL>
+          <Inputs>
+      </Inputs>
+          <Variations>
+      </Variations>
+        </SiteFile>
+      </SiteFiles>
+    </Crawler>
+    <ReportItems>
+      <ReportItem id="0" color="orange">
+        <Name><![CDATA[HTML form without CSRF protection]]></Name>
+        <ModuleName><![CDATA[Crawler]]></ModuleName>
+        <Details><![CDATA[Form name: <font color="navy">&lt;empty&gt;</font><br/>Form action: <font color="navy">http://testphp.vulnweb.com/search.php?test=query</font><br/>Form method: <font color="navy">POST</font><br/><br/>Form inputs:<br/><ul><li>searchFor [Text]</li><li>goButton [Submit]</li></ul>]]></Details>
+        <Affects><![CDATA[/]]></Affects>
+        <Parameter><![CDATA[]]></Parameter>
+        <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+        <AOP_SourceLine>0</AOP_SourceLine>
+        <AOP_Additional><![CDATA[]]></AOP_Additional>
+        <IsFalsePositive><![CDATA[False]]></IsFalsePositive>
+        <Severity><![CDATA[medium]]></Severity>
+        <Type><![CDATA[Informational]]></Type>
+        <Impact><![CDATA[An attacker may force the users of a web application to execute actions of the attacker''s choosing. A successful CSRF exploit can compromise end user data and operation in case of normal user. If the targeted end user is the administrator account, this can compromise the entire web application. ]]></Impact>
+        <Description><![CDATA[ <div class="coolbox"><font color="dark">This alert may be a false positive, manual confirmation is required.</font></div><br/>
+Cross-site request forgery, also known as a one-click attack or session riding and abbreviated as CSRF or XSRF, is a type of malicious exploit of a website whereby unauthorized commands are transmitted from a user that the website trusts.
+
+<br/><br/>Acunetix WVS found a HTML form with no apparent CSRF protection implemented. Consult details for more information about the affected HTML form.]]></Description>
+        <DetailedInformation><![CDATA[]]></DetailedInformation>
+        <Recommendation><![CDATA[Check if this form requires CSRF protection and implement CSRF countermeasures if necessary.]]></Recommendation>
+        <TechnicalDetails>
+          <Request><![CDATA[GET / HTTP/1.1
+Host: testphp.vulnweb.com
+Connection: Keep-alive
+Accept-Encoding: gzip,deflate
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.63 Safari/537.36
+Accept: */*
+
+]]></Request>
+          <Response><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.4.1
+Date: Tue, 07 Oct 2014 14:56:11 GMT
+Content-Type: text/html
+Connection: keep-alive
+X-Powered-By: PHP/5.3.10-1~lucid+2uwsgi2
+Original-Content-Encoding: gzip
+Content-Length: 4096
+]]></Response>
+        </TechnicalDetails>
+        <CWE id="352"><![CDATA[CWE-352]]></CWE>
+        <CVEList/>
+        <CVSS>
+          <Descriptor><![CDATA[AV:N/AC:H/Au:N/C:N/I:P/A:N]]></Descriptor>
+          <Score><![CDATA[2.6]]></Score>
+          <AV><![CDATA[Network]]></AV>
+          <AVdesc><![CDATA[A vulnerability exploitable with network access means the vulnerable software is bound to the network stack and the attacker does not require local network access or local access.]]></AVdesc>
+          <AC><![CDATA[High]]></AC>
+          <ACdesc><![CDATA[Specialized access conditions exist.]]></ACdesc>
+          <Au><![CDATA[None]]></Au>
+          <Audesc><![CDATA[Authentication is not required to exploit the vulnerability.]]></Audesc>
+          <C><![CDATA[None]]></C>
+          <Cdesc><![CDATA[There is no impact to the confidentiality of the system.]]></Cdesc>
+          <I><![CDATA[Partial]]></I>
+          <Idesc><![CDATA[Modification of some system files or information is possible, but the attacker does not have control over what can be modified, or the scope of what the attacker can affect is limited.]]></Idesc>
+          <A><![CDATA[None]]></A>
+          <Adesc><![CDATA[There is no impact to the availability of the system.]]></Adesc>
+          <E><![CDATA[]]></E>
+          <Edesc><![CDATA[]]></Edesc>
+          <RL><![CDATA[]]></RL>
+          <RLdesc><![CDATA[]]></RLdesc>
+          <RC><![CDATA[]]></RC>
+          <RCdesc><![CDATA[]]></RCdesc>
+        </CVSS>
+        <References/>
+      </ReportItem>
+      <ReportItem id="1" color="blue">
+        <Name><![CDATA[Clickjacking: X-Frame-Options header missing]]></Name>
+        <ModuleName><![CDATA[Scripting (Clickjacking_X_Frame_Options.script)]]></ModuleName>
+        <Details><![CDATA[No details are available.]]></Details>
+        <Affects><![CDATA[Web Server]]></Affects>
+        <Parameter><![CDATA[]]></Parameter>
+        <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+        <AOP_SourceLine>0</AOP_SourceLine>
+        <AOP_Additional><![CDATA[]]></AOP_Additional>
+        <IsFalsePositive><![CDATA[False]]></IsFalsePositive>
+        <Severity><![CDATA[low]]></Severity>
+        <Type><![CDATA[Configuration]]></Type>
+        <Impact><![CDATA[The impact depends on the affected web application. ]]></Impact>
+        <Description><![CDATA[Clickjacking (User Interface redress attack, UI redress attack, UI redressing) is a malicious technique of tricking a Web user into clicking on something different from what the user perceives they are clicking on, thus potentially revealing confidential information or taking control of their computer while clicking on seemingly innocuous web pages. <br/><br/>
+The server didn't return an <b>X-Frame-Options</b> header which means that this website could be at risk of a clickjacking attack. The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a &lt;frame&gt; or &lt;iframe&gt;. Sites can use this to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites.
+]]></Description>
+        <DetailedInformation><![CDATA[]]></DetailedInformation>
+        <Recommendation><![CDATA[Configure your web server to include an  X-Frame-Options header. Consult Web references for more information about the possible values for this header.]]></Recommendation>
+        <TechnicalDetails>
+          <Request><![CDATA[GET / HTTP/1.1
+Host: testphp.vulnweb.com
+Connection: Keep-alive
+Accept-Encoding: gzip,deflate
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.63 Safari/537.36
+Accept: */*
+
+]]></Request>
+          <Response><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.4.1
+Date: Tue, 07 Oct 2014 14:56:11 GMT
+Content-Type: text/html
+Connection: keep-alive
+X-Powered-By: PHP/5.3.10-1~lucid+2uwsgi2
+Original-Content-Encoding: gzip
+Content-Length: 4096
+]]></Response>
+        </TechnicalDetails>
+        <CWE id="693"><![CDATA[CWE-693]]></CWE>
+        <CVEList/>
+        <CVSS>
+          <Descriptor><![CDATA[AV:N/AC:M/Au:N/C:P/I:P/A:P]]></Descriptor>
+          <Score><![CDATA[6.8]]></Score>
+          <AV><![CDATA[Network]]></AV>
+          <AVdesc><![CDATA[A vulnerability exploitable with network access means the vulnerable software is bound to the network stack and the attacker does not require local network access or local access.]]></AVdesc>
+          <AC><![CDATA[Medium]]></AC>
+          <ACdesc><![CDATA[The access conditions are somewhat specialized.]]></ACdesc>
+          <Au><![CDATA[None]]></Au>
+          <Audesc><![CDATA[Authentication is not required to exploit the vulnerability.]]></Audesc>
+          <C><![CDATA[Partial]]></C>
+          <Cdesc><![CDATA[There is considerable informational disclosure. Access to some system files is possible, but the attacker does not have control over what is obtained, or the scope of the loss is constrained.]]></Cdesc>
+          <I><![CDATA[Partial]]></I>
+          <Idesc><![CDATA[Modification of some system files or information is possible, but the attacker does not have control over what can be modified, or the scope of what the attacker can affect is limited.]]></Idesc>
+          <A><![CDATA[Partial]]></A>
+          <Adesc><![CDATA[There is reduced performance or interruptions in resource availability.]]></Adesc>
+          <E><![CDATA[]]></E>
+          <Edesc><![CDATA[]]></Edesc>
+          <RL><![CDATA[]]></RL>
+          <RLdesc><![CDATA[]]></RLdesc>
+          <RC><![CDATA[]]></RC>
+          <RCdesc><![CDATA[]]></RCdesc>
+        </CVSS>
+        <References>
+          <Reference>
+            <Database><![CDATA[The X-Frame-Options response header]]></Database>
+            <URL><![CDATA[https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options]]></URL>
+          </Reference>
+          <Reference>
+            <Database><![CDATA[Clickjacking]]></Database>
+            <URL><![CDATA[http://en.wikipedia.org/wiki/Clickjacking]]></URL>
+          </Reference>
+          <Reference>
+            <Database><![CDATA[Original Clickjacking paper]]></Database>
+            <URL><![CDATA[http://www.sectheory.com/clickjacking.htm]]></URL>
+          </Reference>
+        </References>
+      </ReportItem>
+    </ReportItems>
+  </Scan>
+</ScanGroup>

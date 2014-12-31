@@ -4,5 +4,8 @@ Gemfile.lock
 /.bundle/
 /vendor/bundle/
 
+# Combustion (engine testing)
+/spec/internal/
+
 # Gem artifacts
 /pkg/
