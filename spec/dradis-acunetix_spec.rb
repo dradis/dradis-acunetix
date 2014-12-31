@@ -74,6 +74,23 @@ describe 'Acunetix upload plugin' do
 
   # Regression test for github.com/dradis/dradis-nexpose/issues/1
   describe "Source HTML parsing" do
-    pending "identifies code/pre blocks and replaces them with the Textile equivalent"
+    it "identifies code/pre blocks and replaces them with the Textile equivalent" do
+
+      expect(@content_service).to receive(:create_issue) do |args|
+        expect(args[:text]).to     include("#[Title]#\nSQL injection (verified)")
+        expect(args[:text]).not_to include("<code>")
+        expect(args[:text]).not_to include("<pre")
+        expect(args[:id]).to        eq("Scripting (Sql_Injection.script)")
+        OpenStruct.new(args)
+      end.once
+
+      # expect(@content_service).to receive(:create_evidence) do |args|
+      #   expect(args[:content]).to include("Web Server")
+      #   expect(args[:issue].id).to eq("Scripting (Clickjacking_X_Frame_Options.script)")
+      #   expect(args[:node].label).to eq("testphp.vulnweb.com")
+      # end.once
+
+      @importer.import(file: 'spec/fixtures/files/code-pre.acunetix.xml')
+    end
   end
 end
