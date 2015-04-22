@@ -3,43 +3,38 @@ module Dradis::Plugins::Acunetix
 
     # The framework will call this function if the user selects this plugin from
     # the dropdown list and uploads a file.
-    # @returns true if the operation was successful, false otherwise
+    #
+    # @return true if the operation was successful, false otherwise
     def import(params={})
       file_content    = File.read( params.fetch(:file) )
 
-      logger.info{'Parsing Acunetix output file...'}
+      logger.info { 'Parsing Acunetix output file...'}
       @doc = Nokogiri::XML( file_content )
-      logger.info{'Done.'}
+      logger.info { 'Done.'}
 
-      if @doc.xpath('/ScanGroup/Scan').empty?
-        error = "No scan results were detected in the uploaded file (/ScanGroup/Scan). Ensure you uploaded an Acunetix XML report."
-        logger.fatal{ error }
-        content_service.create_note text: error
-        return false
+      if scan_results.any?
+        scan_results.each { |scan_xml| process_scan(scan_xml) }
+        true
+      else
+        log_error
+        false
       end
-
-      @doc.xpath('/ScanGroup/Scan').each do |xml_scan|
-        process_scan(xml_scan)
-      end
-
-      return true
     end # /import
 
 
     private
     attr_accessor :scan_node
 
-    def process_scan(xml_scan)
+    def process_scan(scan_xml)
+      start_url = URI::parse(scan_xml.at_xpath('./StartURL').text()).host
 
-      start_url = URI::parse(xml_scan.at_xpath('./StartURL').text()).host
-
-      self.scan_node = content_service.create_node(label: start_url, type: :host)
+      @scan_node = content_service.create_node(label: start_url, type: :host)
       logger.info{ "\tScan start URL: #{start_url}" }
 
-      scan_note = template_service.process_template(template: 'scan', data: xml_scan)
-      content_service.create_note text: scan_note, node: scan_node
+      scan_note = template_service.process_template(template: 'scan', data: scan_xml)
+      content_service.create_note text: scan_note, node: @scan_node
 
-      xml_scan.xpath('./ReportItems/ReportItem').each do |xml_report_item|
+      scan_xml.xpath('./ReportItems/ReportItem').each do |xml_report_item|
         process_report_item(xml_report_item)
       end
     end
@@ -52,8 +47,29 @@ module Dradis::Plugins::Acunetix
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
 
       logger.info{ "\t\t => Creating new evidence" }
-      evidence_content = template_service.process_template(template: 'evidence', data: xml_report_item)
-      content_service.create_evidence(issue: issue, node: scan_node, content: evidence_content)
+
+      evidence_content = template_service.process_template(
+        template: 'evidence',
+        data: xml_report_item
+      )
+
+      content_service.create_evidence(
+        issue: issue,
+        node: @scan_node,
+        content: evidence_content
+      )
     end
+
+    def scan_results
+      @_scan_results ||= @doc.xpath('/ScanGroup/Scan')
+    end
+
+    def log_error
+      error = "No scan results were detected in the uploaded file "\
+              "(/ScanGroup/Scan). Ensure you uploaded an Acunetix XML report."
+      logger.fatal { error }
+      content_service.create_note text: error
+    end
+
   end
 end
