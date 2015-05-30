@@ -5,8 +5,8 @@ describe 'Acunetix upload plugin' do
   before(:each) do
     # Stub template service
     templates_dir = File.expand_path('../../templates', __FILE__)
-    expect_any_instance_of(Dradis::Plugins::TemplateService)
-    .to receive(:default_templates_dir).and_return(templates_dir)
+    allow_any_instance_of(Dradis::Plugins::TemplateService).to \
+      receive(:default_templates_dir).and_return(templates_dir)
 
     # Init services
     plugin = Dradis::Plugins::Acunetix
