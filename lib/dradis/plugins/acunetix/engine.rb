@@ -6,10 +6,6 @@ module Dradis::Plugins::Acunetix
     description 'Processes Acunetix XML format'
     provides :upload
 
-    #     generators do
-    #       require "path/to/my_railtie_generator"
-    #     end
-
     # Configuring the gem
     # class Configuration < Core::Configurator
     #   configure :namespace => 'burp'
