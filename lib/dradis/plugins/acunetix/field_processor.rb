@@ -4,7 +4,11 @@ module Dradis::Plugins::Acunetix
   class FieldProcessor < Dradis::Plugins::Upload::FieldProcessor
 
     def post_initialize(args={})
-      @acunetix_object = (data.name == 'Scan') ? ::Acunetix::Scan.new(data) : ::Acunetix::ReportItem.new(data)
+      if data.name == "Scan"
+        @acunetix_object = ::Acunetix::Scan.new(data)
+      else
+        @acunetix_object = ::Acunetix::ReportItem.new(data)
+      end
     end
 
     def value(args={})
