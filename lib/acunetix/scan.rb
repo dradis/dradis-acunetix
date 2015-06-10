@@ -59,7 +59,7 @@ module Acunetix
       # Any fields where a simple .camelcase() won't work we need to translate,
       # this includes acronyms (e.g. :scan_url would become 'ScanUrl').
       translations_table = {
-        start_url: 'StarURL'
+        start_url: 'StartURL'
       }
       method_name = translations_table.fetch(method, method.to_s.camelcase)
 

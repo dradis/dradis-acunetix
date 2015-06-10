@@ -15,12 +15,12 @@
     <Technologies><![CDATA[PHP]]></Technologies>
     <Crawler StartUrl="http://testphp.vulnweb.com/">
       <LoginSequence>
-   </LoginSequence>
+      </LoginSequence>
       <Cookies>
         <Variable Name="login" Type="Cookie">
-     </Variable>
+        </Variable>
         <Variable Name="mycookie" Type="Cookie">
-     </Variable>
+        </Variable>
       </Cookies>
       <SiteFiles>
         <SiteFile id="1">
@@ -29,7 +29,7 @@
           <FullURL>http://testphp.vulnweb.com/</FullURL>
           <Inputs>
             <Variable Name="Host" Type="HTTP Header">
-       </Variable>
+            </Variable>
           </Inputs>
           <Variations>
             <Variation>
@@ -44,15 +44,15 @@
           <FullURL>http://testphp.vulnweb.com/search.php</FullURL>
           <Inputs>
             <Variable Name="test" Type="URL encoded GET">
-       </Variable>
+            </Variable>
             <Variable Name="goButton" Type="URL encoded POST">
-       </Variable>
+            </Variable>
             <Variable Name="goButton" Type="URL encoded POST">
-       </Variable>
+            </Variable>
             <Variable Name="test" Type="URL encoded GET">
-       </Variable>
+            </Variable>
             <Variable Name="searchFor" Type="URL encoded POST">
-       </Variable>
+            </Variable>
           </Inputs>
           <Variations>
             <Variation>
@@ -71,7 +71,7 @@
           <FullURL>http://testphp.vulnweb.com/hpp/</FullURL>
           <Inputs>
             <Variable Name="pp" Type="URL encoded GET">
-       </Variable>
+            </Variable>
           </Inputs>
           <Variations>
             <Variation>
@@ -86,17 +86,17 @@
           <FullURL>http://testphp.vulnweb.com/hpp/params.php</FullURL>
           <Inputs>
             <Variable Name="p" Type="URL encoded GET">
-       </Variable>
+            </Variable>
             <Variable Name="p" Type="URL encoded GET">
-       </Variable>
+            </Variable>
             <Variable Name="aaaa/" Type="URL encoded GET">
-       </Variable>
+            </Variable>
             <Variable Name="aaaa/" Type="URL encoded GET">
-       </Variable>
+            </Variable>
             <Variable Name="aaaa/" Type="URL encoded GET">
-       </Variable>
+            </Variable>
             <Variable Name="aaaa/" Type="URL encoded GET">
-       </Variable>
+            </Variable>
           </Inputs>
           <Variations>
             <Variation>
@@ -115,7 +115,7 @@
           <FullURL>http://testphp.vulnweb.com/hpp/index.php</FullURL>
           <Inputs>
             <Variable Name="pp" Type="URL encoded GET">
-       </Variable>
+            </Variable>
           </Inputs>
           <Variations>
             <Variation>
@@ -129,9 +129,9 @@
           <URL>/hpp/test.php</URL>
           <FullURL>http://testphp.vulnweb.com/hpp/test.php</FullURL>
           <Inputs>
-      </Inputs>
+          </Inputs>
           <Variations>
-      </Variations>
+          </Variations>
         </SiteFile>
         <SiteFile id="7">
           <Name>cart.php</Name>
@@ -139,9 +139,9 @@
           <FullURL>http://testphp.vulnweb.com/cart.php</FullURL>
           <Inputs>
             <Variable Name="addcart" Type="URL encoded POST">
-       </Variable>
+            </Variable>
             <Variable Name="addcart" Type="URL encoded POST">
-       </Variable>
+            </Variable>
           </Inputs>
           <Variations>
             <Variation>
