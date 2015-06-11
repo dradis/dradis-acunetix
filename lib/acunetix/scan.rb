@@ -12,12 +12,13 @@ module Acunetix
     # Accepts an XML node from Nokogiri::XML.
     def initialize(xml_node)
       @xml = xml_node
+      unless @xml.name == "Scan"
+        raise "Invalid XML; root node must be called 'Scan'"
+      end
     end
 
-    # List of supported tags. They are all desdendents of the ./HostProperties
-    # node.
-    def supported_tags
-      [
+    # List of supported tags. They are all descendents of the ./Scan node.
+    SUPPORTED_TAGS = [
         # attributes
 
         # simple tags
@@ -26,12 +27,11 @@ module Acunetix
         :fqdn, :operating_system, :mac_address, :netbios_name, :scan_start_time,
         :scan_stop_time
       ]
-    end
 
     # This allows external callers (and specs) to check for implemented
     # properties
     def respond_to?(method, include_private=false)
-      return true if supported_tags.include?(method.to_sym)
+      return true if SUPPORTED_TAGS.include?(method.to_sym)
       super
     end
 
@@ -45,30 +45,49 @@ module Acunetix
       # The problem would be that it would make tricky to debug problems with
       # typos. For instance: <>.potr would return nil instead of raising an
       # exception
-      unless supported_tags.include?(method)
-        super
-        return
-      end
+      super and return unless SUPPORTED_TAGS.include?(method)
 
-      # first we try the attributes: name
-      # translations_table = {}
-      # method_name = translations_table.fetch(method, method.to_s)
-      # return @xml.attributes[method_name].value if @xml.attributes.key?(method_name)
-
-
-      # Any fields where a simple .camelcase() won't work we need to translate,
-      # this includes acronyms (e.g. :scan_url would become 'ScanUrl').
-      translations_table = {
-        start_url: 'StartURL'
-      }
-      method_name = translations_table.fetch(method, method.to_s.camelcase)
-
-      tag = xml.at_xpath("./#{method_name}")
-      if tag
-        return tag.text
+      if tag = xml.at_xpath("./#{tag_name_for_method(method)}")
+        tag.text
       else
-        return nil
+        nil
       end
     end
+
+
+    def report_items
+      @xml.xpath('./ReportItems/ReportItem')
+    end
+
+
+    def service
+      "port #{start_url_port}, #{banner}"
+    end
+
+
+    def start_url_host
+      start_uri.host
+    end
+    alias_method :hostname, :start_url_host
+
+
+    def start_url_port
+      start_uri.port
+    end
+
+    private
+
+    def start_uri
+      @start_uri ||= URI::parse(start_url)
+    end
+
+    def tag_name_for_method(method)
+      # Any fields where a simple .camelcase() won't work we need to translate,
+      # this includes acronyms (e.g. :scan_url would become 'ScanUrl').
+      {
+        start_url: 'StartURL'
+      }[method] || method.to_s.camelcase
+    end
+
   end
 end
