@@ -34,16 +34,24 @@ module Dradis::Plugins::Acunetix
     attr_accessor :scan_node
 
     def process_scan(xml_scan)
+      scan = ::Acunetix::Scan.new(xml_scan)
 
       start_url = URI::parse(xml_scan.at_xpath('./StartURL').text()).host
+      scan = ::Acunetix::Scan.new(xml_scan)
 
-      self.scan_node = content_service.create_node(label: start_url, type: :host)
-      logger.info{ "\tScan start URL: #{start_url}" }
+      self.scan_node = content_service.create_node(
+        label: scan.start_url_host, type: :host
+      )
+      logger.info{ "\tScan start URL: #{scan.start_url_host}" }
+
+      scan_node.set_property(:hostname, scan.hostname)
+      scan_node.set_property(:service,  scan.service)
 
       scan_note = template_service.process_template(template: 'scan', data: xml_scan)
+
       content_service.create_note text: scan_note, node: scan_node
 
-      xml_scan.xpath('./ReportItems/ReportItem').each do |xml_report_item|
+      scan.report_items.each do |xml_report_item|
         process_report_item(xml_report_item)
       end
     end
@@ -52,12 +60,18 @@ module Dradis::Plugins::Acunetix
       plugin_id = xml_report_item.at_xpath('./ModuleName').text()
       logger.info{ "\t\t => Creating new issue (plugin_id: #{plugin_id})" }
 
-      issue_text = template_service.process_template(template: 'report_item', data: xml_report_item)
+      issue_text = template_service.process_template(
+        template: 'report_item', data: xml_report_item
+      )
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
 
       logger.info{ "\t\t => Creating new evidence" }
-      evidence_content = template_service.process_template(template: 'evidence', data: xml_report_item)
-      content_service.create_evidence(issue: issue, node: scan_node, content: evidence_content)
+      evidence_content = template_service.process_template(
+        template: 'evidence', data: xml_report_item
+      )
+      content_service.create_evidence(
+        issue: issue, node: scan_node, content: evidence_content
+      )
     end
   end
 end

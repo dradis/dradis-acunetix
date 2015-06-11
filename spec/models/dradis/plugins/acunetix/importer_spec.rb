@@ -2,10 +2,23 @@ require "spec_helper"
 
 module Dradis::Plugins::Acunetix
   describe Importer do
+    # Crappy hack so we have a simulation of the 'Node' model
+    # in dradis-pro. (We can't get the real model because dradis-pro
+    # isn't included as a dependency of this gem.)
+    #
+    # For the 'real' method, see dradis-pro/lib/node_properties.rb
+    class Node
+      attr_accessor :properties
+      def set_property(key, value)
+        @properties ||= {}
+        @properties[key.to_sym] = value
+      end
+    end
 
+    let(:scan_node) { Node.new }
     let(:content_service) do
       double(
-        "ContentService", :logger= => nil, create_node: nil,
+        "ContentService", :logger= => nil, create_node: scan_node,
           create_note: nil, create_issue: nil, create_evidence: nil
       )
     end
@@ -48,6 +61,21 @@ module Dradis::Plugins::Acunetix
             text: described_class::NO_SCAN_RESULTS_ERROR_MESSAGE
           )
           expect(subject).to be_falsey
+        end
+      end
+
+
+      describe "host nodes" do
+        example "extract the 'hostname' property" do
+          expect{subject}.to change{scan_node.properties}
+          expect(scan_node.properties[:hostname]).to be_present
+          expect(scan_node.properties[:hostname]).to eq "testphp.vulnweb.com"
+        end
+
+        example "extract any service information" do
+          expect{subject}.to change{scan_node.properties}
+          expect(scan_node.properties[:service]).to be_present
+          expect(scan_node.properties[:service]).to eq "port 80, nginx/1.4.1"
         end
       end
     end
