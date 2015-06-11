@@ -1,8 +1,10 @@
 require 'spec_helper'
 require 'ostruct'
+require "support/fake_node"
 
 module Dradis::Plugins
   describe 'Acunetix upload plugin' do
+
     before(:each) do
       # Stub template service
       templates_dir = File.expand_path('../../templates', __FILE__)
@@ -22,7 +24,7 @@ module Dradis::Plugins
       # They return their argument hashes as objects mimicking
       # Nodes, Issues, etc
       allow(@content_service).to receive(:create_node) do |args|
-        OpenStruct.new(args)
+        FakeNode.new(args)
       end
       allow(@content_service).to receive(:create_note) do |args|
         OpenStruct.new(args)

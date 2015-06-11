@@ -1,21 +1,10 @@
 require "spec_helper"
+require "support/fake_node"
 
 module Dradis::Plugins::Acunetix
   describe Importer do
-    # Crappy hack so we have a simulation of the 'Node' model
-    # in dradis-pro. (We can't get the real model because dradis-pro
-    # isn't included as a dependency of this gem.)
-    #
-    # For the 'real' method, see dradis-pro/lib/node_properties.rb
-    class Node
-      attr_accessor :properties
-      def set_property(key, value)
-        @properties ||= {}
-        @properties[key.to_sym] = value
-      end
-    end
 
-    let(:scan_node) { Node.new }
+    let(:scan_node) { FakeNode.new }
     let(:content_service) do
       double(
         "ContentService", :logger= => nil, create_node: scan_node,
