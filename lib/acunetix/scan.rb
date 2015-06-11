@@ -75,6 +75,14 @@ module Acunetix
       start_uri.port
     end
 
+
+    def to_node(content_service)
+      node = content_service.create_node(label: start_url_host, type: :host)
+      node.set_property(:hostname, hostname)
+      node.set_property(:service,  service)
+      node
+    end
+
     private
 
     def start_uri

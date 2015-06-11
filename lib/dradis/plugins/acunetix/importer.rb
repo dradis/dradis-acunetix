@@ -23,31 +23,25 @@ module Dradis::Plugins::Acunetix
       end
 
       @doc.xpath('/ScanGroup/Scan').each do |xml_scan|
-        process_scan(xml_scan)
+        scan = ::Acunetix::Scan.new(xml_scan)
+        process_scan(scan)
       end
 
-      return true
+      true
     end # /import
 
 
     private
     attr_accessor :scan_node
 
-    def process_scan(xml_scan)
-      scan = ::Acunetix::Scan.new(xml_scan)
+    def process_scan(scan)
+      self.scan_node = scan.to_node(content_service)
 
-      start_url = URI::parse(xml_scan.at_xpath('./StartURL').text()).host
-      scan = ::Acunetix::Scan.new(xml_scan)
-
-      self.scan_node = content_service.create_node(
-        label: scan.start_url_host, type: :host
-      )
       logger.info{ "\tScan start URL: #{scan.start_url_host}" }
 
-      scan_node.set_property(:hostname, scan.hostname)
-      scan_node.set_property(:service,  scan.service)
-
-      scan_note = template_service.process_template(template: 'scan', data: xml_scan)
+      scan_note = template_service.process_template(
+        template: 'scan', data: scan.xml
+      )
 
       content_service.create_note text: scan_note, node: scan_node
 
