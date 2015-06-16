@@ -43,6 +43,11 @@ module Dradis::Plugins::Acunetix
         subject
       end
 
+      it "saves the scan node" do
+        subject
+        expect(scan_node).to be_persisted
+      end
+
       context "when the XML has no <Scan> elements" do
         let(:xml_fixture) { "empty.acunetix.xml" }
         it "returns false and creates an error note" do

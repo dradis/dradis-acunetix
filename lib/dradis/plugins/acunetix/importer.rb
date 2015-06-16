@@ -36,6 +36,7 @@ module Dradis::Plugins::Acunetix
 
     def process_scan(scan)
       self.scan_node = scan.to_node(content_service)
+      scan_node.save!
 
       logger.info{ "\tScan start URL: #{scan.start_url_host}" }
 

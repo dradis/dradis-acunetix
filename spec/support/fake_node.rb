@@ -13,5 +13,13 @@ class FakeNode
     @properties ||= {}
     @properties[key.to_sym] = value
   end
+
+  def save!
+    @persisted = true
+  end
+
+  def persisted?
+    @persisted
+  end
 end
 
