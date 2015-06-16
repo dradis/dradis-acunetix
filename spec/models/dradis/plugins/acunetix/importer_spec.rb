@@ -68,8 +68,10 @@ module Dradis::Plugins::Acunetix
 
         example "extract any service information" do
           expect{subject}.to change{scan_node.properties}
-          expect(scan_node.properties[:service]).to be_present
-          expect(scan_node.properties[:service]).to eq "port 80, nginx/1.4.1"
+          expect(scan_node.properties[:services]).to be_present
+          expect(scan_node.properties[:services]).to eq({
+            banner: "nginx/1.4.1", port: 80 }
+          )
         end
       end
     end

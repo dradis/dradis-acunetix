@@ -55,8 +55,8 @@ describe Acunetix::Scan do
   end
 
   describe "#service" do
-    it "returns banner info and port number" do
-      expect(@scan.service).to eq "port 80, nginx/1.4.1"
+    it "returns a hash of service information " do
+      expect(@scan.service).to eq({ banner: "nginx/1.4.1", port: 80 })
     end
   end
 

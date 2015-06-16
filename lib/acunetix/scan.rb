@@ -61,7 +61,10 @@ module Acunetix
 
 
     def service
-      "port #{start_url_port}, #{banner}"
+      {
+        banner: banner,
+        port:   start_url_port
+      }
     end
 
 
@@ -79,7 +82,7 @@ module Acunetix
     def to_node(content_service)
       node = content_service.create_node(label: start_url_host, type: :host)
       node.set_property(:hostname, hostname)
-      node.set_property(:service,  service)
+      node.set_property(:services, service)
       node
     end
 
