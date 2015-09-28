@@ -5,7 +5,7 @@ module Dradis::Plugins::Acunetix
     # the dropdown list and uploads a file.
     # @returns true if the operation was successful, false otherwise
     def import(params={})
-      file_content    = File.read( params[:file] )
+      file_content    = File.read( params.fetch(:file) )
 
       logger.info{'Parsing Acunetix output file...'}
       @doc = Nokogiri::XML( file_content )
