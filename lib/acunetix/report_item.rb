@@ -113,10 +113,10 @@ module Acunetix
       result.gsub!(/&lt;/, '<')
       result.gsub!(/&gt;/, '>')
 
-      result.gsub!(/<b>(.*?)<\/b>/, '*\1*')
+      result.gsub!(/<b>(.*?)<\/b>/) { "*#{$1.strip}*" }
       result.gsub!(/<br\/>/, "\n")
       result.gsub!(/<font.*?>(.*?)<\/font>/m, '\1')
-      result.gsub!(/<h2>(.*?)<\/h2>/, '*\1*')
+      result.gsub!(/<h2>(.*?)<\/h2>/) { "*#{$1.strip}*" }
       result.gsub!(/<i>(.*?)<\/i>/, '\1')
       result.gsub!(/<p>(.*?)<\/p>/, '\1')
       result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
