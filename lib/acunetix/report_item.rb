@@ -121,9 +121,10 @@ module Acunetix
       result.gsub!(/<p>(.*?)<\/p>/, '\1')
       result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
       result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
-      result.gsub!(/<ul>(.*?)<\/ul>/m, '\1')
+      result.gsub!(/<ul>(.*?)<\/ul>/m){"#{$1.strip}\n"}
 
-      result.gsub!(/<li>(.*)?<\/li>/, '* \1')
+      result.gsub!(/<li>(.*?)<\/li>/){"\n* #{$1.strip}"}
+
 
       result
     end
