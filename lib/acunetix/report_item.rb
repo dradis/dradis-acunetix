@@ -125,7 +125,6 @@ module Acunetix
 
       result.gsub!(/<li>(.*?)<\/li>/){"\n* #{$1.strip}"}
 
-
       result
     end
 
@@ -142,7 +141,7 @@ module Acunetix
 
     # Some of the values have embedded HTML conent that we need to strip
     def tags_with_html_content
-      [:details, :description, :detailed_information, :impact]
+      [:details, :description, :detailed_information, :impact, :recommendation]
     end
 
   end
