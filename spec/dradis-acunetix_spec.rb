@@ -91,5 +91,19 @@ module Dradis::Plugins
         @importer.import(file: 'spec/fixtures/files/code-pre.acunetix.xml')
       end
     end
+
+    # Regression test to make sure that commas are replaced with decimals in the CVSSv3 scores
+    describe "CVSS clean up decimals" do
+      it "identifies commas used as decimals in CVSSv3 scores and replaces them with periods" do
+
+        expect(@content_service).to receive(:create_issue) do |args|
+          expect(args[:text]).to include("#[CVSS3Score]#\n5.3")
+          OpenStruct.new(args)
+        end
+        
+        @importer.import(file: 'spec/fixtures/files/commas-format.acunetix.xml')
+      end
+    end
+
   end
 end

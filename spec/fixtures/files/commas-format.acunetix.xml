@@ -1,0 +1,2241 @@
+<?xml version="1.0"?>
+<ScanGroup ExportedOn="20-9-2016, 22:01">
+ <Scan>
+  <Name><![CDATA[Scan Thread 1 ( http://163.172.185.97:80/ )]]></Name>
+  <ShortName><![CDATA[Scan Thread 1]]></ShortName>
+  <StartURL><![CDATA[http://163.172.185.97:80/]]></StartURL>
+  <StartTime><![CDATA[20/9/2016, 16:37:38]]></StartTime>
+  <FinishTime><![CDATA[20/9/2016, 17:13:47]]></FinishTime>
+  <ScanTime><![CDATA[36 minutes, 9 seconds]]></ScanTime>
+  <Aborted><![CDATA[False]]></Aborted>
+  <Responsive><![CDATA[True]]></Responsive>
+  <Banner><![CDATA[Apache/2.4.18 (Ubuntu)]]></Banner>
+  <Os><![CDATA[Unix]]></Os>
+  <WebServer><![CDATA[Apache 2.x]]></WebServer>
+  <Technologies><![CDATA[Perl]]></Technologies>
+  <Crawler StartUrl="http://163.172.185.97/">
+   <Cookies>
+     <Variable Name="CGISESSID" Type="Cookie">
+     </Variable>
+   </Cookies>
+   <SiteFiles>
+     <SiteFile id="1">
+      <Name></Name>
+      <URL>/</URL>
+      <FullURL>http://163.172.185.97/</FullURL>
+      <Inputs>
+       <Variable Name="/[*]/" Type="Path Fragment (suffix /)">
+       </Variable>
+       <Variable Name="Host" Type="HTTP Header">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/</URL>
+         <PostData><![CDATA[]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="2">
+      <Name>taranis</Name>
+      <URL>/taranis/</URL>
+      <FullURL>http://163.172.185.97/taranis/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="3">
+      <Name>login</Name>
+      <URL>/taranis/login/</URL>
+      <FullURL>http://163.172.185.97/taranis/login/</FullURL>
+      <Inputs>
+       <Variable Name="cause" Type="URL encoded GET">
+       </Variable>
+       <Variable Name="goto" Type="URL encoded GET">
+       </Variable>
+       <Variable Name="cause" Type="URL encoded GET">
+       </Variable>
+       <Variable Name="goto" Type="URL encoded GET">
+       </Variable>
+       <Variable Name="csrf_token" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="goto" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="login_userpass_form_submitted" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="password" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="username" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="csrf_token" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="goto" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="login_userpass_form_submitted" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="password" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="username" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/login/?cause=nosession&amp;goto=%2Ftaranis%2F</URL>
+         <PostData><![CDATA[]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/login/?cause=nosession&amp;goto=%2Ftaranis%2F</URL>
+         <PostData><![CDATA[login_userpass_form_submitted=1&amp;csrf_token=be2774671b342bdab34c1aa1db26fe590edc1525304b634924e1b9f8f52d4d18&amp;goto=%2Ftaranis%2F&amp;username=admin&amp;password=2t3qpw6lPFztmSdu]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/login/?cause=nosession&amp;goto=%2Ftaranis%2F</URL>
+         <PostData><![CDATA[login_userpass_form_submitted=1&amp;csrf_token=5749b73b195685f89e5c0f3e134e79ceb66512f899618b204e895e99b7dacf6f&amp;goto=%2Ftaranis%2F&amp;username=admin&amp;password=2t3qpw6lPFztmSdu]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/login/</URL>
+         <PostData><![CDATA[csrf_token=f8cc3c43ba91ff9f3773daa2daab9b0ed76bce4760aa1d9dcbbc8b1267352cd1&amp;goto=/taranis/&amp;login_userpass_form_submitted=1&amp;password=g00dPa%24%24w0rD&amp;username=pmoyajsm]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="4">
+      <Name>load</Name>
+      <URL>/taranis/load</URL>
+      <FullURL>http://163.172.185.97/taranis/load</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="5">
+      <Name>dashboard</Name>
+      <URL>/taranis/load/dashboard</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dashboard</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="6">
+      <Name>dashboard</Name>
+      <URL>/taranis/load/dashboard/dashboard</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dashboard/dashboard</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="7">
+      <Name>getMinifiedDashboardData</Name>
+      <URL>/taranis/load/dashboard/dashboard/getMinifiedDashboardData</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dashboard/dashboard/getMinifiedDashboardData</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/dashboard/dashboard/getMinifiedDashboardData</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="8">
+      <Name>getDashboardData</Name>
+      <URL>/taranis/load/dashboard/dashboard/getDashboardData</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dashboard/dashboard/getDashboardData</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/dashboard/dashboard/getDashboardData</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="9">
+      <Name>configuration</Name>
+      <URL>/taranis/load/configuration</URL>
+      <FullURL>http://163.172.185.97/taranis/load/configuration</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="10">
+      <Name>configuration</Name>
+      <URL>/taranis/load/configuration/configuration</URL>
+      <FullURL>http://163.172.185.97/taranis/load/configuration/configuration</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="11">
+      <Name>displayConfigurationOptions</Name>
+      <URL>/taranis/load/configuration/configuration/displayConfigurationOptions</URL>
+      <FullURL>http://163.172.185.97/taranis/load/configuration/configuration/displayConfigurationOptions</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/configuration/configuration/displayConfigurationOptions</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="12">
+      <Name>user_panel</Name>
+      <URL>/taranis/load/configuration/user_panel</URL>
+      <FullURL>http://163.172.185.97/taranis/load/configuration/user_panel</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="13">
+      <Name>openDialogUserSettings</Name>
+      <URL>/taranis/load/configuration/user_panel/openDialogUserSettings</URL>
+      <FullURL>http://163.172.185.97/taranis/load/configuration/user_panel/openDialogUserSettings</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/configuration/user_panel/openDialogUserSettings</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="14">
+      <Name>statistics</Name>
+      <URL>/taranis/load/statistics</URL>
+      <FullURL>http://163.172.185.97/taranis/load/statistics</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="15">
+      <Name>stats</Name>
+      <URL>/taranis/load/statistics/stats</URL>
+      <FullURL>http://163.172.185.97/taranis/load/statistics/stats</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="16">
+      <Name>displayStatisticsOptions</Name>
+      <URL>/taranis/load/statistics/stats/displayStatisticsOptions</URL>
+      <FullURL>http://163.172.185.97/taranis/load/statistics/stats/displayStatisticsOptions</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/statistics/stats/displayStatisticsOptions</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="17">
+      <Name>about</Name>
+      <URL>/taranis/load/about</URL>
+      <FullURL>http://163.172.185.97/taranis/load/about</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="18">
+      <Name>about</Name>
+      <URL>/taranis/load/about/about</URL>
+      <FullURL>http://163.172.185.97/taranis/load/about/about</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="19">
+      <Name>displayAbout</Name>
+      <URL>/taranis/load/about/about/displayAbout</URL>
+      <FullURL>http://163.172.185.97/taranis/load/about/about/displayAbout</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/about/about/displayAbout</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="20">
+      <Name>assess</Name>
+      <URL>/taranis/load/assess</URL>
+      <FullURL>http://163.172.185.97/taranis/load/assess</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="21">
+      <Name>assess</Name>
+      <URL>/taranis/load/assess/assess</URL>
+      <FullURL>http://163.172.185.97/taranis/load/assess/assess</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="22">
+      <Name>displayAssess</Name>
+      <URL>/taranis/load/assess/assess/displayAssess</URL>
+      <FullURL>http://163.172.185.97/taranis/load/assess/assess/displayAssess</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="category" Type="JSON">
+       </Variable>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="status" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/displayAssess</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/displayAssess</URL>
+         <PostData><![CDATA[params=%7B%22category%22%3A%222%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/displayAssess</URL>
+         <PostData><![CDATA[params=%7B%22category%22%3A%224%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/displayAssess</URL>
+         <PostData><![CDATA[params=%7B%22category%22%3A%221%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/displayAssess</URL>
+         <PostData><![CDATA[params=%7B%22category%22%3A%223%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/displayAssess</URL>
+         <PostData><![CDATA[params=%7B%22status%22%3A%220%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="23">
+      <Name>getRelatedIds</Name>
+      <URL>/taranis/load/assess/assess/getRelatedIds</URL>
+      <FullURL>http://163.172.185.97/taranis/load/assess/assess/getRelatedIds</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/getRelatedIds</URL>
+         <PostData><![CDATA[params=%7B%22%22%3A%22%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="24">
+      <Name>getAddedToPublication</Name>
+      <URL>/taranis/load/assess/assess/getAddedToPublication</URL>
+      <FullURL>http://163.172.185.97/taranis/load/assess/assess/getAddedToPublication</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/getAddedToPublication</URL>
+         <PostData><![CDATA[params=%7B%22%22%3A%22%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="25">
+      <Name>displayAssessShortcuts</Name>
+      <URL>/taranis/load/assess/assess/displayAssessShortcuts</URL>
+      <FullURL>http://163.172.185.97/taranis/load/assess/assess/displayAssessShortcuts</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/assess/assess/displayAssessShortcuts</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="26">
+      <Name>tagging</Name>
+      <URL>/taranis/load/tagging</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tagging</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="27">
+      <Name>tag</Name>
+      <URL>/taranis/load/tagging/tag</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tagging/tag</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="28">
+      <Name>getTags</Name>
+      <URL>/taranis/load/tagging/tag/getTags</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tagging/tag/getTags</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="t_name" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tagging/tag/getTags</URL>
+         <PostData><![CDATA[params=%7B%22t_name%22%3A%22item%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tagging/tag/getTags</URL>
+         <PostData><![CDATA[params=%7B%22t_name%22%3A%22analysis%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tagging/tag/getTags</URL>
+         <PostData><![CDATA[params=%7B%22t_name%22%3A%22publication_advisory%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tagging/tag/getTags</URL>
+         <PostData><![CDATA[params=%7B%22t_name%22%3A%22publication_advisory_forward%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tagging/tag/getTags</URL>
+         <PostData><![CDATA[params=%7B%22t_name%22%3A%22publication_endofday%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tagging/tag/getTags</URL>
+         <PostData><![CDATA[params=%7B%22t_name%22%3A%22publication_endofshift%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tagging/tag/getTags</URL>
+         <PostData><![CDATA[params=%7B%22t_name%22%3A%22publication_endofweek%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="29">
+      <Name>analyze</Name>
+      <URL>/taranis/load/analyze</URL>
+      <FullURL>http://163.172.185.97/taranis/load/analyze</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="30">
+      <Name>analyze</Name>
+      <URL>/taranis/load/analyze/analyze</URL>
+      <FullURL>http://163.172.185.97/taranis/load/analyze/analyze</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="31">
+      <Name>displayAnalyze</Name>
+      <URL>/taranis/load/analyze/analyze/displayAnalyze</URL>
+      <FullURL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="status" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</URL>
+         <PostData><![CDATA[params=%7B%22status%22%3A%22pending%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</URL>
+         <PostData><![CDATA[params=%7B%22status%22%3A%22done%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</URL>
+         <PostData><![CDATA[params=%7B%22status%22%3A%22eow%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</URL>
+         <PostData><![CDATA[params=%7B%22status%22%3A%22eow+done%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</URL>
+         <PostData><![CDATA[params=%7B%22status%22%3A%22skipped%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</URL>
+         <PostData><![CDATA[params=%7B%22status%22%3A%22waiting%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/analyze/analyze/displayAnalyze</URL>
+         <PostData><![CDATA[params=%7B%22status%22%3A%22joined%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="32">
+      <Name>write</Name>
+      <URL>/taranis/load/write</URL>
+      <FullURL>http://163.172.185.97/taranis/load/write</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="33">
+      <Name>publications</Name>
+      <URL>/taranis/load/write/publications</URL>
+      <FullURL>http://163.172.185.97/taranis/load/write/publications</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="34">
+      <Name>displayPublicationOptions</Name>
+      <URL>/taranis/load/write/publications/displayPublicationOptions</URL>
+      <FullURL>http://163.172.185.97/taranis/load/write/publications/displayPublicationOptions</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/write/publications/displayPublicationOptions</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="35">
+      <Name>displayPublications</Name>
+      <URL>/taranis/load/write/publications/displayPublications</URL>
+      <FullURL>http://163.172.185.97/taranis/load/write/publications/displayPublications</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="pub_type" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/write/publications/displayPublications</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22advisory%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/write/publications/displayPublications</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22forward%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/write/publications/displayPublications</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22eod%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/write/publications/displayPublications</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22eos%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/write/publications/displayPublications</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22eow%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="36">
+      <Name>publish</Name>
+      <URL>/taranis/load/publish</URL>
+      <FullURL>http://163.172.185.97/taranis/load/publish</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="37">
+      <Name>publish</Name>
+      <URL>/taranis/load/publish/publish</URL>
+      <FullURL>http://163.172.185.97/taranis/load/publish/publish</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="38">
+      <Name>displayPublishOptions</Name>
+      <URL>/taranis/load/publish/publish/displayPublishOptions</URL>
+      <FullURL>http://163.172.185.97/taranis/load/publish/publish/displayPublishOptions</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/publish/publish/displayPublishOptions</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="39">
+      <Name>displayPublish</Name>
+      <URL>/taranis/load/publish/publish/displayPublish</URL>
+      <FullURL>http://163.172.185.97/taranis/load/publish/publish/displayPublish</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="pub_type" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/publish/publish/displayPublish</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22advisory%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/publish/publish/displayPublish</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22forward%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/publish/publish/displayPublish</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22eod_public%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/publish/publish/displayPublish</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22eod%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/publish/publish/displayPublish</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22eos%22%7D]]></PostData>
+        </Variation>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/publish/publish/displayPublish</URL>
+         <PostData><![CDATA[params=%7B%22pub_type%22%3A%22eow%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="40">
+      <Name>dossier</Name>
+      <URL>/taranis/load/dossier</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dossier</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="41">
+      <Name>dossier</Name>
+      <URL>/taranis/load/dossier/dossier</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dossier/dossier</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="42">
+      <Name>displayMyDossiers</Name>
+      <URL>/taranis/load/dossier/dossier/displayMyDossiers</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dossier/dossier/displayMyDossiers</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/dossier/dossier/displayMyDossiers</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="43">
+      <Name>displayDossiers</Name>
+      <URL>/taranis/load/dossier/dossier/displayDossiers</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dossier/dossier/displayDossiers</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/dossier/dossier/displayDossiers</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="44">
+      <Name>dossier_pending</Name>
+      <URL>/taranis/load/dossier/dossier_pending</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dossier/dossier_pending</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="45">
+      <Name>displayMyPendingItems</Name>
+      <URL>/taranis/load/dossier/dossier_pending/displayMyPendingItems</URL>
+      <FullURL>http://163.172.185.97/taranis/load/dossier/dossier_pending/displayMyPendingItems</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/dossier/dossier_pending/displayMyPendingItems</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="46">
+      <Name>report</Name>
+      <URL>/taranis/load/report</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="47">
+      <Name>report</Name>
+      <URL>/taranis/load/report/report</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/report</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="48">
+      <Name>displayReportOptions</Name>
+      <URL>/taranis/load/report/report/displayReportOptions</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/report/displayReportOptions</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/report/report/displayReportOptions</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="49">
+      <Name>todo</Name>
+      <URL>/taranis/load/report/todo</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/todo</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="50">
+      <Name>displayToDos</Name>
+      <URL>/taranis/load/report/todo/displayToDos</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/todo/displayToDos</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/report/todo/displayToDos</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="51">
+      <Name>contact_log</Name>
+      <URL>/taranis/load/report/contact_log</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/contact_log</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="52">
+      <Name>displayContactLogs</Name>
+      <URL>/taranis/load/report/contact_log/displayContactLogs</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/contact_log/displayContactLogs</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/report/contact_log/displayContactLogs</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="53">
+      <Name>incident_log</Name>
+      <URL>/taranis/load/report/incident_log</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/incident_log</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="54">
+      <Name>displayIncidentLogs</Name>
+      <URL>/taranis/load/report/incident_log/displayIncidentLogs</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/incident_log/displayIncidentLogs</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/report/incident_log/displayIncidentLogs</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="55">
+      <Name>special_interest</Name>
+      <URL>/taranis/load/report/special_interest</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/special_interest</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="56">
+      <Name>displaySpecialInterests</Name>
+      <URL>/taranis/load/report/special_interest/displaySpecialInterests</URL>
+      <FullURL>http://163.172.185.97/taranis/load/report/special_interest/displaySpecialInterests</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/report/special_interest/displaySpecialInterests</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="57">
+      <Name>tools</Name>
+      <URL>/taranis/load/tools</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="58">
+      <Name>toolspage</Name>
+      <URL>/taranis/load/tools/toolspage</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/toolspage</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="59">
+      <Name>displayToolOptions</Name>
+      <URL>/taranis/load/tools/toolspage/displayToolOptions</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/toolspage/displayToolOptions</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tools/toolspage/displayToolOptions</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="60">
+      <Name>phishing_overview</Name>
+      <URL>/taranis/load/tools/phishing_overview</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/phishing_overview</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="61">
+      <Name>displayPhishingOverview</Name>
+      <URL>/taranis/load/tools/phishing_overview/displayPhishingOverview</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/phishing_overview/displayPhishingOverview</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="tool" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tools/phishing_overview/displayPhishingOverview</URL>
+         <PostData><![CDATA[params=%7B%22tool%22%3A%22phishing_checker%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="62">
+      <Name>whois</Name>
+      <URL>/taranis/load/tools/whois</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/whois</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="63">
+      <Name>displayWhois</Name>
+      <URL>/taranis/load/tools/whois/displayWhois</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/whois/displayWhois</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="tool" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tools/whois/displayWhois</URL>
+         <PostData><![CDATA[params=%7B%22tool%22%3A%22whois%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="64">
+      <Name>announcements</Name>
+      <URL>/taranis/load/tools/announcements</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/announcements</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="65">
+      <Name>displayAnnouncements</Name>
+      <URL>/taranis/load/tools/announcements/displayAnnouncements</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/announcements/displayAnnouncements</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="tool" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tools/announcements/displayAnnouncements</URL>
+         <PostData><![CDATA[params=%7B%22tool%22%3A%22announcements%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="66">
+      <Name>feed_digest</Name>
+      <URL>/taranis/load/tools/feed_digest</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/feed_digest</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="67">
+      <Name>displayFeedDigests</Name>
+      <URL>/taranis/load/tools/feed_digest/displayFeedDigests</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/feed_digest/displayFeedDigests</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="tool" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tools/feed_digest/displayFeedDigests</URL>
+         <PostData><![CDATA[params=%7B%22tool%22%3A%22feed_digest%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="68">
+      <Name>stream</Name>
+      <URL>/taranis/load/tools/stream</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/stream</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="69">
+      <Name>displayStreams</Name>
+      <URL>/taranis/load/tools/stream/displayStreams</URL>
+      <FullURL>http://163.172.185.97/taranis/load/tools/stream/displayStreams</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="tool" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/tools/stream/displayStreams</URL>
+         <PostData><![CDATA[params=%7B%22tool%22%3A%22streams%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="70">
+      <Name>search</Name>
+      <URL>/taranis/load/search</URL>
+      <FullURL>http://163.172.185.97/taranis/load/search</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="71">
+      <Name>meta_search</Name>
+      <URL>/taranis/load/search/meta_search</URL>
+      <FullURL>http://163.172.185.97/taranis/load/search/meta_search</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="72">
+      <Name>doMetaSearch</Name>
+      <URL>/taranis/load/search/meta_search/doMetaSearch</URL>
+      <FullURL>http://163.172.185.97/taranis/load/search/meta_search/doMetaSearch</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+       <Variable Name="hidden-page-number" Type="JSON">
+       </Variable>
+       <Variable Name="search" Type="JSON">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/search/meta_search/doMetaSearch</URL>
+         <PostData><![CDATA[params=%7B%22search%22%3A%22e%22%2C%22hidden-page-number%22%3A%221%22%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="73">
+      <Name>showAdvancedSearchSettings</Name>
+      <URL>/taranis/load/search/meta_search/showAdvancedSearchSettings</URL>
+      <FullURL>http://163.172.185.97/taranis/load/search/meta_search/showAdvancedSearchSettings</FullURL>
+      <Inputs>
+       <Variable Name="params" Type="URL encoded POST">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/load/search/meta_search/showAdvancedSearchSettings</URL>
+         <PostData><![CDATA[params=%7B%7D]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="74">
+      <Name>about</Name>
+      <URL>/taranis/about</URL>
+      <FullURL>http://163.172.185.97/taranis/about</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="75">
+      <Name>about</Name>
+      <URL>/taranis/about/about</URL>
+      <FullURL>http://163.172.185.97/taranis/about/about</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="76">
+      <Name>displayAbout</Name>
+      <URL>/taranis/about/about/displayAbout/</URL>
+      <FullURL>http://163.172.185.97/taranis/about/about/displayAbout/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="77">
+      <Name>statistics</Name>
+      <URL>/taranis/statistics</URL>
+      <FullURL>http://163.172.185.97/taranis/statistics</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="78">
+      <Name>stats</Name>
+      <URL>/taranis/statistics/stats</URL>
+      <FullURL>http://163.172.185.97/taranis/statistics/stats</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="79">
+      <Name>displayStatisticsOptions</Name>
+      <URL>/taranis/statistics/stats/displayStatisticsOptions/</URL>
+      <FullURL>http://163.172.185.97/taranis/statistics/stats/displayStatisticsOptions/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="80">
+      <Name>session</Name>
+      <URL>/taranis/session</URL>
+      <FullURL>http://163.172.185.97/taranis/session</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="81">
+      <Name>logout</Name>
+      <URL>/taranis/session/logout</URL>
+      <FullURL>http://163.172.185.97/taranis/session/logout</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="82">
+      <Name>logoutUser</Name>
+      <URL>/taranis/session/logout/logoutUser/</URL>
+      <FullURL>http://163.172.185.97/taranis/session/logout/logoutUser/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="83">
+      <Name>configuration</Name>
+      <URL>/taranis/configuration</URL>
+      <FullURL>http://163.172.185.97/taranis/configuration</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="84">
+      <Name>configuration</Name>
+      <URL>/taranis/configuration/configuration</URL>
+      <FullURL>http://163.172.185.97/taranis/configuration/configuration</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="85">
+      <Name>displayConfigurationOptions</Name>
+      <URL>/taranis/configuration/configuration/displayConfigurationOptions/</URL>
+      <FullURL>http://163.172.185.97/taranis/configuration/configuration/displayConfigurationOptions/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="86">
+      <Name>session_keepalive</Name>
+      <URL>/taranis/session_keepalive</URL>
+      <FullURL>http://163.172.185.97/taranis/session_keepalive</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="87">
+      <Name>session_ok</Name>
+      <URL>/taranis/session_ok</URL>
+      <FullURL>http://163.172.185.97/taranis/session_ok</FullURL>
+      <Inputs>
+       <Variable Name="_" Type="URL encoded GET">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/taranis/session_ok?_=1474382268744</URL>
+         <PostData><![CDATA[]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="88">
+      <Name>include</Name>
+      <URL>/include/</URL>
+      <FullURL>http://163.172.185.97/include/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="89">
+      <Name>css</Name>
+      <URL>/include/css/</URL>
+      <FullURL>http://163.172.185.97/include/css/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="90">
+      <Name>reset.css</Name>
+      <URL>/include/css/reset.css</URL>
+      <FullURL>http://163.172.185.97/include/css/reset.css</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="91">
+      <Name>main.css</Name>
+      <URL>/include/css/main.css</URL>
+      <FullURL>http://163.172.185.97/include/css/main.css</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="92">
+      <Name>jquery.timepicker.css</Name>
+      <URL>/include/css/jquery.timepicker.css</URL>
+      <FullURL>http://163.172.185.97/include/css/jquery.timepicker.css</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="93">
+      <Name>jquery-ui-1.10.1.custom.css</Name>
+      <URL>/include/css/jquery-ui-1.10.1.custom.css</URL>
+      <FullURL>http://163.172.185.97/include/css/jquery-ui-1.10.1.custom.css</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="94">
+      <Name>font-awesome-4.2.0</Name>
+      <URL>/include/css/font-awesome-4.2.0/</URL>
+      <FullURL>http://163.172.185.97/include/css/font-awesome-4.2.0/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="95">
+      <Name>css</Name>
+      <URL>/include/css/font-awesome-4.2.0/css/</URL>
+      <FullURL>http://163.172.185.97/include/css/font-awesome-4.2.0/css/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="96">
+      <Name>font-awesome.min.css</Name>
+      <URL>/include/css/font-awesome-4.2.0/css/font-awesome.min.css</URL>
+      <FullURL>http://163.172.185.97/include/css/font-awesome-4.2.0/css/font-awesome.min.css</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="97">
+      <Name>fonts</Name>
+      <URL>/include/css/font-awesome-4.2.0/fonts/</URL>
+      <FullURL>http://163.172.185.97/include/css/font-awesome-4.2.0/fonts/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="98">
+      <Name>fontawesome-webfont.ttf</Name>
+      <URL>/include/css/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf</URL>
+      <FullURL>http://163.172.185.97/include/css/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf</FullURL>
+      <Inputs>
+       <Variable Name="v" Type="URL encoded GET">
+       </Variable>
+      </Inputs>
+      <Variations>
+        <Variation>
+         <URL>http://163.172.185.97/include/css/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf?v=4.2.0</URL>
+         <PostData><![CDATA[]]></PostData>
+        </Variation>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="99">
+      <Name>jqcloud.css</Name>
+      <URL>/include/css/jqcloud.css</URL>
+      <FullURL>http://163.172.185.97/include/css/jqcloud.css</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="100">
+      <Name>js</Name>
+      <URL>/include/js/</URL>
+      <FullURL>http://163.172.185.97/include/js/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="101">
+      <Name>jquery-1.9.1.min.js</Name>
+      <URL>/include/js/jquery-1.9.1.min.js</URL>
+      <FullURL>http://163.172.185.97/include/js/jquery-1.9.1.min.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="102">
+      <Name>jslib.js</Name>
+      <URL>/include/js/jslib.js</URL>
+      <FullURL>http://163.172.185.97/include/js/jslib.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="103">
+      <Name>flot</Name>
+      <URL>/include/js/flot/</URL>
+      <FullURL>http://163.172.185.97/include/js/flot/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="104">
+      <Name>jquery.flot.time.js</Name>
+      <URL>/include/js/flot/jquery.flot.time.js</URL>
+      <FullURL>http://163.172.185.97/include/js/flot/jquery.flot.time.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="105">
+      <Name>jquery.flot.symbol.js</Name>
+      <URL>/include/js/flot/jquery.flot.symbol.js</URL>
+      <FullURL>http://163.172.185.97/include/js/flot/jquery.flot.symbol.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="106">
+      <Name>jquery.flot.threshold.js</Name>
+      <URL>/include/js/flot/jquery.flot.threshold.js</URL>
+      <FullURL>http://163.172.185.97/include/js/flot/jquery.flot.threshold.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="107">
+      <Name>jquery.flot.js</Name>
+      <URL>/include/js/flot/jquery.flot.js</URL>
+      <FullURL>http://163.172.185.97/include/js/flot/jquery.flot.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="108">
+      <Name>jquery.timer.js</Name>
+      <URL>/include/js/jquery.timer.js</URL>
+      <FullURL>http://163.172.185.97/include/js/jquery.timer.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="109">
+      <Name>jqcloud.js</Name>
+      <URL>/include/js/jqcloud.js</URL>
+      <FullURL>http://163.172.185.97/include/js/jqcloud.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="110">
+      <Name>mousetrap.min.js</Name>
+      <URL>/include/js/mousetrap.min.js</URL>
+      <FullURL>http://163.172.185.97/include/js/mousetrap.min.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="111">
+      <Name>mousetrap-pause.min.js</Name>
+      <URL>/include/js/mousetrap-pause.min.js</URL>
+      <FullURL>http://163.172.185.97/include/js/mousetrap-pause.min.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="112">
+      <Name>jquery-ui-1.10.1.custom.min.js</Name>
+      <URL>/include/js/jquery-ui-1.10.1.custom.min.js</URL>
+      <FullURL>http://163.172.185.97/include/js/jquery-ui-1.10.1.custom.min.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="113">
+      <Name>print_preview.js</Name>
+      <URL>/include/js/print_preview.js</URL>
+      <FullURL>http://163.172.185.97/include/js/print_preview.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="114">
+      <Name>taranis.sorter.js</Name>
+      <URL>/include/js/taranis.sorter.js</URL>
+      <FullURL>http://163.172.185.97/include/js/taranis.sorter.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="115">
+      <Name>spin.js</Name>
+      <URL>/include/js/spin.js</URL>
+      <FullURL>http://163.172.185.97/include/js/spin.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="116">
+      <Name>taranis.spin.js</Name>
+      <URL>/include/js/taranis.spin.js</URL>
+      <FullURL>http://163.172.185.97/include/js/taranis.spin.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="117">
+      <Name>main.js</Name>
+      <URL>/include/js/main.js</URL>
+      <FullURL>http://163.172.185.97/include/js/main.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="118">
+      <Name>tagging.js</Name>
+      <URL>/include/js/tagging.js</URL>
+      <FullURL>http://163.172.185.97/include/js/tagging.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="119">
+      <Name>taranis.session_keepalive.timer.js</Name>
+      <URL>/include/js/taranis.session_keepalive.timer.js</URL>
+      <FullURL>http://163.172.185.97/include/js/taranis.session_keepalive.timer.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="120">
+      <Name>taranis.dashboard.timer.js</Name>
+      <URL>/include/js/taranis.dashboard.timer.js</URL>
+      <FullURL>http://163.172.185.97/include/js/taranis.dashboard.timer.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="121">
+      <Name>taranis.assess.timer.js</Name>
+      <URL>/include/js/taranis.assess.timer.js</URL>
+      <FullURL>http://163.172.185.97/include/js/taranis.assess.timer.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="122">
+      <Name>menu.js</Name>
+      <URL>/include/js/menu.js</URL>
+      <FullURL>http://163.172.185.97/include/js/menu.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="123">
+      <Name>dashboard.js</Name>
+      <URL>/include/js/dashboard.js</URL>
+      <FullURL>http://163.172.185.97/include/js/dashboard.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="124">
+      <Name>shared_dialogs.js</Name>
+      <URL>/include/js/shared_dialogs.js</URL>
+      <FullURL>http://163.172.185.97/include/js/shared_dialogs.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="125">
+      <Name>datevalidation.js</Name>
+      <URL>/include/js/datevalidation.js</URL>
+      <FullURL>http://163.172.185.97/include/js/datevalidation.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="126">
+      <Name>user_panel.js</Name>
+      <URL>/include/js/user_panel.js</URL>
+      <FullURL>http://163.172.185.97/include/js/user_panel.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="127">
+      <Name>letsago</Name>
+      <URL>/include/js/letsago/</URL>
+      <FullURL>http://163.172.185.97/include/js/letsago/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="128">
+      <Name>oneup.js</Name>
+      <URL>/include/js/letsago/oneup.js</URL>
+      <FullURL>http://163.172.185.97/include/js/letsago/oneup.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="129">
+      <Name>meta_search.js</Name>
+      <URL>/include/js/meta_search.js</URL>
+      <FullURL>http://163.172.185.97/include/js/meta_search.js</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="130">
+      <Name>configuration.js</Name>
+      <URL>/include/js/configuration.js?_=1474382268743</URL>
+      <FullURL>http://163.172.185.97/include/js/configuration.js?_=1474382268743</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="131">
+      <Name>assess.js</Name>
+      <URL>/include/js/assess.js?_=1474382268745</URL>
+      <FullURL>http://163.172.185.97/include/js/assess.js?_=1474382268745</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="132">
+      <Name>assess_details.js</Name>
+      <URL>/include/js/assess_details.js?_=1474382268746</URL>
+      <FullURL>http://163.172.185.97/include/js/assess_details.js?_=1474382268746</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="133">
+      <Name>keyboard_shortcuts</Name>
+      <URL>/include/js/keyboard_shortcuts/</URL>
+      <FullURL>http://163.172.185.97/include/js/keyboard_shortcuts/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="134">
+      <Name>assess.js</Name>
+      <URL>/include/js/keyboard_shortcuts/assess.js?_=1474382268750</URL>
+      <FullURL>http://163.172.185.97/include/js/keyboard_shortcuts/assess.js?_=1474382268750</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="135">
+      <Name>analyze_details.js</Name>
+      <URL>/include/js/analyze_details.js?_=1474382268749</URL>
+      <FullURL>http://163.172.185.97/include/js/analyze_details.js?_=1474382268749</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="136">
+      <Name>assess2analyze.js</Name>
+      <URL>/include/js/assess2analyze.js?_=1474382268748</URL>
+      <FullURL>http://163.172.185.97/include/js/assess2analyze.js?_=1474382268748</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="137">
+      <Name>assess_filters.js</Name>
+      <URL>/include/js/assess_filters.js?_=1474382268747</URL>
+      <FullURL>http://163.172.185.97/include/js/assess_filters.js?_=1474382268747</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="138">
+      <Name>publications_common_actions.js</Name>
+      <URL>/include/js/publications_common_actions.js?_=1474382268751</URL>
+      <FullURL>http://163.172.185.97/include/js/publications_common_actions.js?_=1474382268751</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="139">
+      <Name>publications.js</Name>
+      <URL>/include/js/publications.js?_=1474382268752</URL>
+      <FullURL>http://163.172.185.97/include/js/publications.js?_=1474382268752</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="140">
+      <Name>analyze_filters.js</Name>
+      <URL>/include/js/analyze_filters.js?_=1474382268756</URL>
+      <FullURL>http://163.172.185.97/include/js/analyze_filters.js?_=1474382268756</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="141">
+      <Name>analyze.js</Name>
+      <URL>/include/js/analyze.js?_=1474382268755</URL>
+      <FullURL>http://163.172.185.97/include/js/analyze.js?_=1474382268755</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="142">
+      <Name>publications_advisory_forward.js</Name>
+      <URL>/include/js/publications_advisory_forward.js?_=1474382268754</URL>
+      <FullURL>http://163.172.185.97/include/js/publications_advisory_forward.js?_=1474382268754</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="143">
+      <Name>publications_advisory.js</Name>
+      <URL>/include/js/publications_advisory.js?_=1474382268753</URL>
+      <FullURL>http://163.172.185.97/include/js/publications_advisory.js?_=1474382268753</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="144">
+      <Name>analysis2publication.js</Name>
+      <URL>/include/js/analysis2publication.js?_=1474382268757</URL>
+      <FullURL>http://163.172.185.97/include/js/analysis2publication.js?_=1474382268757</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="145">
+      <Name>publish_details.js</Name>
+      <URL>/include/js/publish_details.js?_=1474382268758</URL>
+      <FullURL>http://163.172.185.97/include/js/publish_details.js?_=1474382268758</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="146">
+      <Name>publish.js</Name>
+      <URL>/include/js/publish.js?_=1474382268759</URL>
+      <FullURL>http://163.172.185.97/include/js/publish.js?_=1474382268759</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="147">
+      <Name>jquery.timepicker.min.js</Name>
+      <URL>/include/js/jquery.timepicker.min.js?_=1474382268760</URL>
+      <FullURL>http://163.172.185.97/include/js/jquery.timepicker.min.js?_=1474382268760</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="148">
+      <Name>jquery-textrange</Name>
+      <URL>/include/js/jquery-textrange/</URL>
+      <FullURL>http://163.172.185.97/include/js/jquery-textrange/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="149">
+      <Name>jquery-textrange.js</Name>
+      <URL>/include/js/jquery-textrange/jquery-textrange.js?_=1474382268761</URL>
+      <FullURL>http://163.172.185.97/include/js/jquery-textrange/jquery-textrange.js?_=1474382268761</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="150">
+      <Name>dossier_pending.js</Name>
+      <URL>/include/js/dossier_pending.js?_=1474382268763</URL>
+      <FullURL>http://163.172.185.97/include/js/dossier_pending.js?_=1474382268763</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="151">
+      <Name>dossier.js</Name>
+      <URL>/include/js/dossier.js?_=1474382268762</URL>
+      <FullURL>http://163.172.185.97/include/js/dossier.js?_=1474382268762</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="152">
+      <Name>report_contact_log.js</Name>
+      <URL>/include/js/report_contact_log.js?_=1474382268764</URL>
+      <FullURL>http://163.172.185.97/include/js/report_contact_log.js?_=1474382268764</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="153">
+      <Name>report_incident_log.js</Name>
+      <URL>/include/js/report_incident_log.js?_=1474382268765</URL>
+      <FullURL>http://163.172.185.97/include/js/report_incident_log.js?_=1474382268765</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="154">
+      <Name>report.js</Name>
+      <URL>/include/js/report.js?_=1474382268768</URL>
+      <FullURL>http://163.172.185.97/include/js/report.js?_=1474382268768</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="155">
+      <Name>report_todo.js</Name>
+      <URL>/include/js/report_todo.js?_=1474382268767</URL>
+      <FullURL>http://163.172.185.97/include/js/report_todo.js?_=1474382268767</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="156">
+      <Name>report_special_interest.js</Name>
+      <URL>/include/js/report_special_interest.js?_=1474382268766</URL>
+      <FullURL>http://163.172.185.97/include/js/report_special_interest.js?_=1474382268766</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="157">
+      <Name>toolspage.js</Name>
+      <URL>/include/js/toolspage.js?_=1474382268769</URL>
+      <FullURL>http://163.172.185.97/include/js/toolspage.js?_=1474382268769</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="158">
+      <Name>publications_filters.js</Name>
+      <URL>/include/js/publications_filters.js?_=1474382268770</URL>
+      <FullURL>http://163.172.185.97/include/js/publications_filters.js?_=1474382268770</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="159">
+      <Name>publications_eow.js</Name>
+      <URL>/include/js/publications_eow.js?_=1474382268771</URL>
+      <FullURL>http://163.172.185.97/include/js/publications_eow.js?_=1474382268771</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="160">
+      <Name>tab_in_textarea.js</Name>
+      <URL>/include/js/tab_in_textarea.js?_=1474382268774</URL>
+      <FullURL>http://163.172.185.97/include/js/tab_in_textarea.js?_=1474382268774</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="161">
+      <Name>publications_eos.js</Name>
+      <URL>/include/js/publications_eos.js?_=1474382268773</URL>
+      <FullURL>http://163.172.185.97/include/js/publications_eos.js?_=1474382268773</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="162">
+      <Name>publications_eod.js</Name>
+      <URL>/include/js/publications_eod.js?_=1474382268772</URL>
+      <FullURL>http://163.172.185.97/include/js/publications_eod.js?_=1474382268772</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="163">
+      <Name>cve.js</Name>
+      <URL>/include/js/cve.js?_=1474382268775</URL>
+      <FullURL>http://163.172.185.97/include/js/cve.js?_=1474382268775</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="164">
+      <Name>publish_advisory.js</Name>
+      <URL>/include/js/publish_advisory.js?_=1474382268776</URL>
+      <FullURL>http://163.172.185.97/include/js/publish_advisory.js?_=1474382268776</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="165">
+      <Name>publish_advisory_forward.js</Name>
+      <URL>/include/js/publish_advisory_forward.js?_=1474382268777</URL>
+      <FullURL>http://163.172.185.97/include/js/publish_advisory_forward.js?_=1474382268777</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="166">
+      <Name>publish_eod_public.js</Name>
+      <URL>/include/js/publish_eod_public.js?_=1474382268781</URL>
+      <FullURL>http://163.172.185.97/include/js/publish_eod_public.js?_=1474382268781</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="167">
+      <Name>publish_eod.js</Name>
+      <URL>/include/js/publish_eod.js?_=1474382268780</URL>
+      <FullURL>http://163.172.185.97/include/js/publish_eod.js?_=1474382268780</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="168">
+      <Name>publish_eos.js</Name>
+      <URL>/include/js/publish_eos.js?_=1474382268779</URL>
+      <FullURL>http://163.172.185.97/include/js/publish_eos.js?_=1474382268779</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="169">
+      <Name>publish_eow.js</Name>
+      <URL>/include/js/publish_eow.js?_=1474382268778</URL>
+      <FullURL>http://163.172.185.97/include/js/publish_eow.js?_=1474382268778</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="170">
+      <Name>phishing.js</Name>
+      <URL>/include/js/phishing.js?_=1474382268782</URL>
+      <FullURL>http://163.172.185.97/include/js/phishing.js?_=1474382268782</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="171">
+      <Name>taranis.phishing.timer.js</Name>
+      <URL>/include/js/taranis.phishing.timer.js?_=1474382268783</URL>
+      <FullURL>http://163.172.185.97/include/js/taranis.phishing.timer.js?_=1474382268783</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="172">
+      <Name>whois.js</Name>
+      <URL>/include/js/whois.js?_=1474382268784</URL>
+      <FullURL>http://163.172.185.97/include/js/whois.js?_=1474382268784</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="173">
+      <Name>announcements.js</Name>
+      <URL>/include/js/announcements.js?_=1474382268785</URL>
+      <FullURL>http://163.172.185.97/include/js/announcements.js?_=1474382268785</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="174">
+      <Name>feed_digest.js</Name>
+      <URL>/include/js/feed_digest.js?_=1474382268786</URL>
+      <FullURL>http://163.172.185.97/include/js/feed_digest.js?_=1474382268786</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="175">
+      <Name>stream.js</Name>
+      <URL>/include/js/stream.js?_=1474382268787</URL>
+      <FullURL>http://163.172.185.97/include/js/stream.js?_=1474382268787</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="176">
+      <Name>images</Name>
+      <URL>/images/</URL>
+      <FullURL>http://163.172.185.97/images/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="177">
+      <Name>toplogo.png</Name>
+      <URL>/images/toplogo.png</URL>
+      <FullURL>http://163.172.185.97/images/toplogo.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="178">
+      <Name>icon_search.png</Name>
+      <URL>/images/icon_search.png</URL>
+      <FullURL>http://163.172.185.97/images/icon_search.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="179">
+      <Name>icon_keyboard_check.png</Name>
+      <URL>/images/icon_keyboard_check.png</URL>
+      <FullURL>http://163.172.185.97/images/icon_keyboard_check.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="180">
+      <Name>user_new.png</Name>
+      <URL>/images/user_new.png</URL>
+      <FullURL>http://163.172.185.97/images/user_new.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="181">
+      <Name>mail_plain_red.png</Name>
+      <URL>/images/mail_plain_red.png</URL>
+      <FullURL>http://163.172.185.97/images/mail_plain_red.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="182">
+      <Name>lamp_inactive.png</Name>
+      <URL>/images/lamp_inactive.png</URL>
+      <FullURL>http://163.172.185.97/images/lamp_inactive.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="183">
+      <Name>MailBox.png</Name>
+      <URL>/images/MailBox.png</URL>
+      <FullURL>http://163.172.185.97/images/MailBox.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="184">
+      <Name>base.png</Name>
+      <URL>/images/base.png</URL>
+      <FullURL>http://163.172.185.97/images/base.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="185">
+      <Name>user.png</Name>
+      <URL>/images/user.png</URL>
+      <FullURL>http://163.172.185.97/images/user.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="186">
+      <Name>base_dark.png</Name>
+      <URL>/images/base_dark.png</URL>
+      <FullURL>http://163.172.185.97/images/base_dark.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="187">
+      <Name>time_clock.png</Name>
+      <URL>/images/time_clock.png</URL>
+      <FullURL>http://163.172.185.97/images/time_clock.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="188">
+      <Name>mail_plain_green.png</Name>
+      <URL>/images/mail_plain_green.png</URL>
+      <FullURL>http://163.172.185.97/images/mail_plain_green.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="189">
+      <Name>mail_check.png</Name>
+      <URL>/images/mail_check.png</URL>
+      <FullURL>http://163.172.185.97/images/mail_check.png</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="190">
+      <Name>icons</Name>
+      <URL>/images/icons/</URL>
+      <FullURL>http://163.172.185.97/images/icons/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="191">
+      <Name>stats</Name>
+      <URL>/stats/</URL>
+      <FullURL>http://163.172.185.97/stats/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+     <SiteFile id="192">
+      <Name>tmp</Name>
+      <URL>/stats/tmp/</URL>
+      <FullURL>http://163.172.185.97/stats/tmp/</FullURL>
+      <Inputs>
+      </Inputs>
+      <Variations>
+      </Variations>
+     </SiteFile>
+   </SiteFiles>
+  </Crawler>
+    <ReportItems>
+      <ReportItem id="10" color="orange">
+       <Name><![CDATA[Slow HTTP Denial of Service Attack]]></Name>
+       <ModuleName><![CDATA[Slow_HTTP_DOS]]></ModuleName>
+       <Details><![CDATA[Time difference between connections: <font color="dark">10016 </font>ms]]></Details>
+       <Affects><![CDATA[Web Server]]></Affects>
+       <Parameter><![CDATA[]]></Parameter>
+       <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+       <AOP_SourceLine>0</AOP_SourceLine>
+       <AOP_Additional><![CDATA[]]></AOP_Additional>
+       <IsFalsePositive><![CDATA[False]]></IsFalsePositive>
+       <Severity><![CDATA[medium]]></Severity>
+       <Type><![CDATA[Configuration]]></Type>
+       <Impact><![CDATA[A single machine can take down another machine's web server with minimal bandwidth and side effects on unrelated services and ports.]]></Impact>
+       <Description><![CDATA[Your web server is vulnerable to Slow HTTP DoS (Denial of Service) attacks. <br/><br/>
+
+Slowloris and Slow HTTP POST DoS attacks rely on the fact that the HTTP protocol, by design, requires requests to be completely received by the server before they are processed. If an HTTP request is not complete, or if the transfer rate is very low, the server keeps its resources busy waiting for the rest of the data. If the server keeps too many resources busy, this creates a denial of service.]]></Description>
+       <DetailedInformation><![CDATA[]]></DetailedInformation>
+       <Recommendation><![CDATA[Consult Web references for information about protecting your web server against this type of attack.]]></Recommendation>
+       <TechnicalDetails>
+        <Request><![CDATA[]]></Request>
+        <Response><![CDATA[]]></Response>
+       </TechnicalDetails>
+       <CWE id=""><![CDATA[]]></CWE>
+      <CVEList></CVEList>
+       <CVSS>
+          <Descriptor><![CDATA[AV:N/AC:L/Au:N/C:N/I:N/A:N]]></Descriptor>
+          <Score><![CDATA[0.0]]></Score>
+          <AV><![CDATA[Network]]></AV>
+          <AVdesc><![CDATA[A vulnerability exploitable with network access means the vulnerable software is bound to the network stack and the attacker does not require local network access or local access.]]></AVdesc>
+          <AC><![CDATA[Low]]></AC>
+          <ACdesc><![CDATA[Specialized access conditions or extenuating circumstances do not exist.]]></ACdesc>
+          <Au><![CDATA[None]]></Au>
+          <Audesc><![CDATA[Authentication is not required to exploit the vulnerability.]]></Audesc>
+          <C><![CDATA[None]]></C>
+          <Cdesc><![CDATA[There is no impact to the confidentiality of the system.]]></Cdesc>
+          <I><![CDATA[None]]></I>
+          <Idesc><![CDATA[There is no impact to the integrity of the system.]]></Idesc>
+          <A><![CDATA[None]]></A>
+          <Adesc><![CDATA[There is no impact to the availability of the system.]]></Adesc>
+          <E><![CDATA[]]></E>
+          <Edesc><![CDATA[]]></Edesc>
+          <RL><![CDATA[]]></RL>
+          <RLdesc><![CDATA[]]></RLdesc>
+          <RC><![CDATA[]]></RC>
+          <RCdesc><![CDATA[]]></RCdesc>
+       </CVSS>
+       <CVSS3>
+          <Descriptor><![CDATA[CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L]]></Descriptor>
+          <Score><![CDATA[5,3]]></Score>
+          <TempScore><![CDATA[]]></TempScore>
+          <EnvScore><![CDATA[]]></EnvScore>
+          <AV><![CDATA[Network]]></AV>
+          <AVdesc><![CDATA[A vulnerability exploitable with network access means the vulnerable component is bound to the network stack and the attacker's path is through OSI layer 3 (the network layer). Such a vulnerability is often termed "remotely exploitable" and can be thought of as an attack being exploitable one or more network hops away (e.g. across layer 3 boundaries from routers).]]></AVdesc>
+          <AC><![CDATA[Low]]></AC>
+          <ACdesc><![CDATA[Specialized access conditions or extenuating circumstances do not exist. An attacker can expect repeatable success against the vulnerable component.]]></ACdesc>
+          <PR><![CDATA[None]]></PR>
+          <PRdesc><![CDATA[The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files to carry out an attack.]]></PRdesc>
+          <UI><![CDATA[None]]></UI>
+          <UIdesc><![CDATA[The vulnerable system can be exploited without interaction from any user.]]></UIdesc>
+          <S><![CDATA[Unchanged]]></S>
+          <Sdesc><![CDATA[An exploited vulnerability can only affect resources managed by the same authority. In this case the vulnerable component and the impacted component are the same.]]></Sdesc>
+          <C><![CDATA[None]]></C>
+          <Cdesc><![CDATA[There is no loss of confidentiality within the impacted component.]]></Cdesc>
+          <I><![CDATA[None]]></I>
+          <Idesc><![CDATA[There is no loss of integrity within the impacted component.]]></Idesc>
+          <A><![CDATA[Low]]></A>
+          <Adesc><![CDATA[There is reduced performance or interruptions in resource availability. Even if repeated exploitation of the vulnerability is possible, the attacker does not have the ability to completely deny service to legitimate users.]]></Adesc>
+          <E><![CDATA[X]]></E>
+          <Edesc><![CDATA[]]></Edesc>
+          <RL><![CDATA[X]]></RL>
+          <RLdesc><![CDATA[]]></RLdesc>
+          <RC><![CDATA[X]]></RC>
+          <RCdesc><![CDATA[]]></RCdesc>
+       </CVSS3>
+       <References>
+        <Reference>
+          <Database><![CDATA[Slowloris DOS Mitigation Guide]]></Database>
+          <URL><![CDATA[http://www.funtoo.org/wiki/Slowloris_DOS_Mitigation_Guide]]></URL>
+        </Reference>
+        <Reference>
+          <Database><![CDATA[Protect Apache Against Slowloris Attack]]></Database>
+          <URL><![CDATA[http://blog.secaserver.com/2011/08/protect-apache-slowloris-attack/]]></URL>
+        </Reference>
+       </References>
+      </ReportItem>
+		</ReportItems>
+ </Scan>
+</ScanGroup>
+
