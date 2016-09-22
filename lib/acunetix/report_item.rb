@@ -158,7 +158,7 @@ module Acunetix
     end
 
     def tags_with_commas
-      [:cvss3_score]
+      [:cvss3_score, :cvss3_tempscore, :cvss3_envscore]
     end
 
   end
