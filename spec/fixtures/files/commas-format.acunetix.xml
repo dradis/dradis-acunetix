@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<ScanGroup ExportedOn="20-9-2016, 22:01">
+ <Scan>
+  <Name><![CDATA[Scan Thread 1 ( http://10.0.185.97:80/ )]]></Name>
+  <ShortName><![CDATA[Scan Thread 1]]></ShortName>
+  <StartURL><![CDATA[http://10.0.185.97:80/]]></StartURL>
+  <StartTime><![CDATA[20/9/2016, 16:37:38]]></StartTime>
+  <FinishTime><![CDATA[20/9/2016, 17:13:47]]></FinishTime>
+  <ScanTime><![CDATA[36 minutes, 9 seconds]]></ScanTime>
+  <Aborted><![CDATA[False]]></Aborted>
+  <Responsive><![CDATA[True]]></Responsive>
+  <Banner><![CDATA[Apache/2.4.18 (Ubuntu)]]></Banner>
+  <Os><![CDATA[Unix]]></Os>
+  <WebServer><![CDATA[Apache 2.x]]></WebServer>
+  <Technologies><![CDATA[Perl]]></Technologies>
+    <ReportItems>
+      <ReportItem id="10" color="orange">
+       <Name><![CDATA[Slow HTTP Denial of Service Attack]]></Name>
+       <ModuleName><![CDATA[Slow_HTTP_DOS]]></ModuleName>
+       <Details><![CDATA[Time difference between connections: <font color="dark">10016 </font>ms]]></Details>
+       <Affects><![CDATA[Web Server]]></Affects>
+       <Parameter><![CDATA[]]></Parameter>
+       <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+       <AOP_SourceLine>0</AOP_SourceLine>
+       <AOP_Additional><![CDATA[]]></AOP_Additional>
+       <IsFalsePositive><![CDATA[False]]></IsFalsePositive>
+       <Severity><![CDATA[medium]]></Severity>
+       <Type><![CDATA[Configuration]]></Type>
+       <Impact><![CDATA[A single machine can take down another machine's web server with minimal bandwidth and side effects on unrelated services and ports.]]></Impact>
+       <Description><![CDATA[Your web server is vulnerable to Slow HTTP DoS (Denial of Service) attacks. <br/><br/>
+
+Slowloris and Slow HTTP POST DoS attacks rely on the fact that the HTTP protocol, by design, requires requests to be completely received by the server before they are processed. If an HTTP request is not complete, or if the transfer rate is very low, the server keeps its resources busy waiting for the rest of the data. If the server keeps too many resources busy, this creates a denial of service.]]></Description>
+       <DetailedInformation><![CDATA[]]></DetailedInformation>
+       <Recommendation><![CDATA[Consult Web references for information about protecting your web server against this type of attack.]]></Recommendation>
+       <TechnicalDetails>
+        <Request><![CDATA[]]></Request>
+        <Response><![CDATA[]]></Response>
+       </TechnicalDetails>
+       <CWE id=""><![CDATA[]]></CWE>
+      <CVEList></CVEList>
+       <CVSS>
+          <Descriptor><![CDATA[AV:N/AC:L/Au:N/C:N/I:N/A:N]]></Descriptor>
+          <Score><![CDATA[0.0]]></Score>
+          <AV><![CDATA[Network]]></AV>
+          <AVdesc><![CDATA[A vulnerability exploitable with network access means the vulnerable software is bound to the network stack and the attacker does not require local network access or local access.]]></AVdesc>
+          <AC><![CDATA[Low]]></AC>
+          <ACdesc><![CDATA[Specialized access conditions or extenuating circumstances do not exist.]]></ACdesc>
+          <Au><![CDATA[None]]></Au>
+          <Audesc><![CDATA[Authentication is not required to exploit the vulnerability.]]></Audesc>
+          <C><![CDATA[None]]></C>
+          <Cdesc><![CDATA[There is no impact to the confidentiality of the system.]]></Cdesc>
+          <I><![CDATA[None]]></I>
+          <Idesc><![CDATA[There is no impact to the integrity of the system.]]></Idesc>
+          <A><![CDATA[None]]></A>
+          <Adesc><![CDATA[There is no impact to the availability of the system.]]></Adesc>
+          <E><![CDATA[]]></E>
+          <Edesc><![CDATA[]]></Edesc>
+          <RL><![CDATA[]]></RL>
+          <RLdesc><![CDATA[]]></RLdesc>
+          <RC><![CDATA[]]></RC>
+          <RCdesc><![CDATA[]]></RCdesc>
+       </CVSS>
+       <CVSS3>
+          <Descriptor><![CDATA[CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L]]></Descriptor>
+          <Score><![CDATA[5,3]]></Score>
+          <TempScore><![CDATA[]]></TempScore>
+          <EnvScore><![CDATA[]]></EnvScore>
+          <AV><![CDATA[Network]]></AV>
+          <AVdesc><![CDATA[A vulnerability exploitable with network access means the vulnerable component is bound to the network stack and the attacker's path is through OSI layer 3 (the network layer). Such a vulnerability is often termed "remotely exploitable" and can be thought of as an attack being exploitable one or more network hops away (e.g. across layer 3 boundaries from routers).]]></AVdesc>
+          <AC><![CDATA[Low]]></AC>
+          <ACdesc><![CDATA[Specialized access conditions or extenuating circumstances do not exist. An attacker can expect repeatable success against the vulnerable component.]]></ACdesc>
+          <PR><![CDATA[None]]></PR>
+          <PRdesc><![CDATA[The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files to carry out an attack.]]></PRdesc>
+          <UI><![CDATA[None]]></UI>
+          <UIdesc><![CDATA[The vulnerable system can be exploited without interaction from any user.]]></UIdesc>
+          <S><![CDATA[Unchanged]]></S>
+          <Sdesc><![CDATA[An exploited vulnerability can only affect resources managed by the same authority. In this case the vulnerable component and the impacted component are the same.]]></Sdesc>
+          <C><![CDATA[None]]></C>
+          <Cdesc><![CDATA[There is no loss of confidentiality within the impacted component.]]></Cdesc>
+          <I><![CDATA[None]]></I>
+          <Idesc><![CDATA[There is no loss of integrity within the impacted component.]]></Idesc>
+          <A><![CDATA[Low]]></A>
+          <Adesc><![CDATA[There is reduced performance or interruptions in resource availability. Even if repeated exploitation of the vulnerability is possible, the attacker does not have the ability to completely deny service to legitimate users.]]></Adesc>
+          <E><![CDATA[X]]></E>
+          <Edesc><![CDATA[]]></Edesc>
+          <RL><![CDATA[X]]></RL>
+          <RLdesc><![CDATA[]]></RLdesc>
+          <RC><![CDATA[X]]></RC>
+          <RCdesc><![CDATA[]]></RCdesc>
+       </CVSS3>
+       <References>
+        <Reference>
+          <Database><![CDATA[Slowloris DOS Mitigation Guide]]></Database>
+          <URL><![CDATA[http://www.funtoo.org/wiki/Slowloris_DOS_Mitigation_Guide]]></URL>
+        </Reference>
+        <Reference>
+          <Database><![CDATA[Protect Apache Against Slowloris Attack]]></Database>
+          <URL><![CDATA[http://blog.secaserver.com/2011/08/protect-apache-slowloris-attack/]]></URL>
+        </Reference>
+       </References>
+      </ReportItem>
+		</ReportItems>
+ </Scan>
+</ScanGroup>
+
