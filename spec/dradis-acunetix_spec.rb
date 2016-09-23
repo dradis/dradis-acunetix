@@ -45,25 +45,25 @@ module Dradis::Plugins
 
       expect(@content_service).to receive(:create_issue) do |args|
         expect(args[:text]).to include("#[Title]#\nHTML form without CSRF protection")
-        expect(args[:id]).to eq("Crawler")
+        expect(args[:id]).to eq("Crawler/HTML form without CSRF protection")
         OpenStruct.new(args)
       end.once
 
       expect(@content_service).to receive(:create_issue) do |args|
         expect(args[:text]).to include("#[Title]#\nClickjacking: X-Frame-Options header missing")
-        expect(args[:id]).to eq("Scripting (Clickjacking_X_Frame_Options.script)")
+        expect(args[:id]).to eq("Scripting (Clickjacking_X_Frame_Options.script)/Clickjacking: X-Frame-Options header missing")
         OpenStruct.new(args)
       end.once
 
       expect(@content_service).to receive(:create_evidence) do |args|
         expect(args[:content]).to include("/")
-        expect(args[:issue].id).to eq("Crawler")
+        expect(args[:issue].id).to eq("Crawler/HTML form without CSRF protection")
         expect(args[:node].label).to eq("testphp.vulnweb.com")
       end.once
 
       expect(@content_service).to receive(:create_evidence) do |args|
         expect(args[:content]).to include("Web Server")
-        expect(args[:issue].id).to eq("Scripting (Clickjacking_X_Frame_Options.script)")
+        expect(args[:issue].id).to eq("Scripting (Clickjacking_X_Frame_Options.script)/Clickjacking: X-Frame-Options header missing")
         expect(args[:node].label).to eq("testphp.vulnweb.com")
       end.once
 
@@ -78,7 +78,7 @@ module Dradis::Plugins
           expect(args[:text]).to     include("#[Title]#\nSQL injection (verified)")
           expect(args[:text]).not_to include("<code>")
           expect(args[:text]).not_to include("<pre")
-          expect(args[:id]).to        eq("Scripting (Sql_Injection.script)")
+          expect(args[:id]).to        eq("Scripting (Sql_Injection.script)/SQL injection (verified)")
           OpenStruct.new(args)
         end.once
 
