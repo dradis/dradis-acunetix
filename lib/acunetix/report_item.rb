@@ -128,9 +128,9 @@ module Acunetix
       result.gsub!(/<p>(.*?)<\/p>/, '\1')
       result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
       result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
-      result.gsub!(/<ul>(.*?)<\/ul>/m, '\1')
+      result.gsub!(/<ul>(.*?)<\/ul>/m){"#{$1.strip}\n"}
 
-      result.gsub!(/<li>(.*)?<\/li>/, '* \1')
+      result.gsub!(/<li>(.*?)<\/li>/){"\n* #{$1.strip}"}
 
       result
     end
@@ -154,7 +154,7 @@ module Acunetix
 
     # Some of the values have embedded HTML conent that we need to strip
     def tags_with_html_content
-      [:details, :description, :detailed_information, :impact]
+      [:details, :description, :detailed_information, :impact, :recommendation]
     end
 
     def tags_with_commas
