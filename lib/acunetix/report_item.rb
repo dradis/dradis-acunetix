@@ -34,6 +34,7 @@ module Acunetix
         # nested tags
         :request, :response,
         :cvss_descriptor, :cvss_score,
+        :cvss3_descriptor, :cvss3_score, :cvss3_tempscore, :cvss3_envscore,
 
         # multiple tags
         :cve_list, :references
@@ -75,7 +76,11 @@ module Acunetix
                 request: 'TechnicalDetails/Request',
                response: 'TechnicalDetails/Response',
         cvss_descriptor: 'CVSS/Descriptor',
-             cvss_score: 'CVSS/Score'
+             cvss_score: 'CVSS/Score',
+       cvss3_descriptor: 'CVSS3/Descriptor',
+            cvss3_score: 'CVSS3/Score',
+        cvss3_tempscore: 'CVSS3/TempScore',
+         cvss3_envscore: 'CVSS3/EnvScore'
       }
       method_name = translations_table.fetch(method, method.to_s.camelcase)
       # first we try the attributes:
@@ -91,6 +96,8 @@ module Acunetix
       if tag && !tag.text.blank?
         if tags_with_html_content.include?(method)
           return cleanup_html(tag.text)
+        elsif tags_with_commas.include?(method)
+          return cleanup_decimals(tag.text)
         else
           return tag.text
         end
@@ -113,10 +120,10 @@ module Acunetix
       result.gsub!(/&lt;/, '<')
       result.gsub!(/&gt;/, '>')
 
-      result.gsub!(/<b>(.*?)<\/b>/, '*\1*')
+      result.gsub!(/<b>(.*?)<\/b>/) { "*#{$1.strip}*" }
       result.gsub!(/<br\/>/, "\n")
       result.gsub!(/<font.*?>(.*?)<\/font>/m, '\1')
-      result.gsub!(/<h2>(.*?)<\/h2>/, '*\1*')
+      result.gsub!(/<h2>(.*?)<\/h2>/) { "*#{$1.strip}*" }
       result.gsub!(/<i>(.*?)<\/i>/, '\1')
       result.gsub!(/<p>(.*?)<\/p>/, '\1')
       result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
@@ -125,6 +132,12 @@ module Acunetix
 
       result.gsub!(/<li>(.*?)<\/li>/){"\n* #{$1.strip}"}
 
+      result
+    end
+
+    def cleanup_decimals(source)
+      result = source.dup
+      result.gsub!(/([0-9])\,([0-9])/, '\1.\2')
       result
     end
 
@@ -142,6 +155,10 @@ module Acunetix
     # Some of the values have embedded HTML conent that we need to strip
     def tags_with_html_content
       [:details, :description, :detailed_information, :impact, :recommendation]
+    end
+
+    def tags_with_commas
+      [:cvss3_score, :cvss3_tempscore, :cvss3_envscore]
     end
 
   end
