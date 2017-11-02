@@ -30,11 +30,26 @@ module Dradis::Plugins::Acunetix
     attr_accessor :scan_node
 
     def process_scan(xml_scan)
-
       start_url = URI::parse(xml_scan.at_xpath('./StartURL').text()).host
 
       self.scan_node = content_service.create_node(label: start_url, type: :host)
       logger.info{ "\tScan start URL: #{start_url}" }
+
+      # Define Node properties
+      if scan_node.respond_to?(:properties)
+        scan_node.set_property(:short_name, xml_scan.at_xpath('./ShortName').text() )
+        scan_node.set_property(:start_url, start_url)
+        scan_node.set_property(:start_time, xml_scan.at_xpath('./StartTime').text() )
+        scan_node.set_property(:finish_time, xml_scan.at_xpath('./FinishTime').text() )
+        scan_node.set_property(:scan_time, xml_scan.at_xpath('./ScanTime').text() )
+        scan_node.set_property(:aborted, xml_scan.at_xpath('./Aborted').text() )
+        scan_node.set_property(:responsive, xml_scan.at_xpath('./Responsive').text() )
+        scan_node.set_property(:banner, xml_scan.at_xpath('./Banner').text() )
+        scan_node.set_property(:os, xml_scan.at_xpath('./Os').text() )
+        scan_node.set_property(:web_server, xml_scan.at_xpath('./WebServer').text() )
+        scan_node.set_property(:technologies, xml_scan.at_xpath('./Technologies').text() )
+        scan_node.save
+      end     
 
       scan_note = template_service.process_template(template: 'scan', data: xml_scan)
       content_service.create_note text: scan_note, node: scan_node
