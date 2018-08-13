@@ -1,4 +1,4 @@
-## Dradis Framework 4.0 (August, 2018) #
+## Dradis Framework 3.10 (August, 2018) #
 
 *   No changes
 
