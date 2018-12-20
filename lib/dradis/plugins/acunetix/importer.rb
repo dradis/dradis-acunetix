@@ -30,7 +30,12 @@ module Dradis::Plugins::Acunetix
     attr_accessor :scan_node
 
     def process_scan(xml_scan)
-      start_url = URI::parse(xml_scan.at_xpath('./StartURL').text()).host
+      # Don't URI-parse simple URLs like testphp.vulnweb.com 
+      if xml_scan.at_xpath('./StartURL').text().start_with?('http')
+        start_url = URI::parse(xml_scan.at_xpath('./StartURL').text()).host
+      else
+        start_url = xml_scan.at_xpath('./StartURL').text()
+      end
 
       self.scan_node = content_service.create_node(label: start_url, type: :host)
       logger.info{ "\tScan start URL: #{start_url}" }
