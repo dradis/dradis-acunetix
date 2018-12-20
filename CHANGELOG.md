@@ -1,3 +1,8 @@
+## Dradis Framework 3.12 (xxxx, 2018) #
+
+*   Resolves create_node errors that appeared with URLs without "http"
+
+
 ## Dradis Framework 3.11 (November, 2018) #
 
 *   No changes
