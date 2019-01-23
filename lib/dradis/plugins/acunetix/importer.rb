@@ -30,7 +30,8 @@ module Dradis::Plugins::Acunetix
     attr_accessor :scan_node
 
     def process_scan(xml_scan)
-      start_url = URI::parse(xml_scan.at_xpath('./StartURL').text()).host
+      url = xml_scan.at_xpath('./StartURL').text()
+      start_url = URI::parse(url).host || url # urls wo/ protocol returned nil
 
       self.scan_node = content_service.create_node(label: start_url, type: :host)
       logger.info{ "\tScan start URL: #{start_url}" }
@@ -49,7 +50,7 @@ module Dradis::Plugins::Acunetix
         scan_node.set_property(:web_server, xml_scan.at_xpath('./WebServer').text() )
         scan_node.set_property(:technologies, xml_scan.at_xpath('./Technologies').text() )
         scan_node.save
-      end     
+      end
 
       scan_note = template_service.process_template(template: 'scan', data: xml_scan)
       content_service.create_note text: scan_note, node: scan_node
