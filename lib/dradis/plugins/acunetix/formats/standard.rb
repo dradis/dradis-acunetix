@@ -3,7 +3,13 @@ module Dradis::Plugins::Acunetix::Formats
 
     private
 
-    def process_standard(xml_scan)
+    def process_standard
+      xml.xpath('/ScanGroup/Scan').each do |xml_scan|
+        process_scan(xml_scan)
+      end
+    end
+
+    def process_scan(xml_scan)
       url = xml_scan.at_xpath('./StartURL').text()
       start_url = URI::parse(url).host || url # urls wo/ protocol returned nil
 
