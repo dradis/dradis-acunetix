@@ -15,7 +15,7 @@ module Dradis::Plugins::Acunetix::Formats
         type: :host
       )
 
-      logger.info { "Creating target node: #{target_node.label}" }
+      logger.info { "Creating target node: #{scan_node.label}" }
 
       if scan_node.respond_to?(:properties)
         scan_node.set_property(:scan_id, target_xml.at_xpath('scan-id').text)
@@ -25,15 +25,15 @@ module Dradis::Plugins::Acunetix::Formats
     end
 
     def process_acunetix360_vulnerabilities
-      logger.info { "Creating issues from Acunetix360 vulnerabilities." }
+      logger.info { 'Creating issues from Acunetix360 vulnerabilities.' }
 
-      xml.xpath('//acunetix-360/vulnerabilities/vulnerability').each do |vuln|
+      xml.xpath('//acunetix-360/vulnerabilities/vulnerability').each do |vuln_xml|
         issue_text = template_service.process_template(
-          template: 'acunetix360_vulnerability',
-          data: vuln
+          template: '360_vulnerability',
+          data: vuln_xml
         )
 
-        lookup_id = vuln.xpath('')
+        lookup_id = vuln_xml.at_xpath('LookupId').text
         content_service.create_issue(text: issue_text, id: lookup_id)
       end
     end
