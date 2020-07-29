@@ -10,7 +10,7 @@ module Dradis::Plugins::Acunetix::Formats
 
     def process_target_node
       target_xml = xml.at_xpath('//acunetix-360/target')
-      scan_node = content_service.create_node(
+      @scan_node = content_service.create_node(
         label: target_xml.at_xpath('url').text,
         type: :host
       )
@@ -33,8 +33,8 @@ module Dradis::Plugins::Acunetix::Formats
           data: vuln_xml
         )
 
-        lookup_id = vuln_xml.at_xpath('LookupId').text
-        issue = content_service.create_issue(text: issue_text, id: lookup_id)
+        type = vuln_xml.at_xpath('type').text
+        issue = content_service.create_issue(text: issue_text, id: type)
 
         evidence_text = template_service.process_template(
           template: '360_evidence',
