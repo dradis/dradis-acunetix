@@ -34,7 +34,14 @@ module Dradis::Plugins::Acunetix::Formats
         )
 
         lookup_id = vuln_xml.at_xpath('LookupId').text
-        content_service.create_issue(text: issue_text, id: lookup_id)
+        issue = content_service.create_issue(text: issue_text, id: lookup_id)
+
+        evidence_text = template_service.process_template(
+          template: '360_evidence',
+          data: vuln_xml
+        )
+
+        content_service.create_evidence(issue: issue, node: scan_node, content: evidence_text)
       end
     end
   end
