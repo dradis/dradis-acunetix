@@ -4,6 +4,9 @@ module Cleanup
   # Convert HTML in the text to Textile format
   def cleanup_html(source)
     result = source.dup
+
+    format_table(result)
+
     result.gsub!(/&quot;/, '"')
     result.gsub!(/&amp;/, '&')
     result.gsub!(/&lt;/, '<')
@@ -11,13 +14,14 @@ module Cleanup
 
     result.gsub!(/<b>(.*?)<\/b>/) { "*#{$1.strip}*" }
     result.gsub!(/<br\/>/, "\n")
+    result.gsub!(/<div(.*?)>|<\/div>/, '')
     result.gsub!(/<font.*?>(.*?)<\/font>/m, '\1')
     result.gsub!(/<h2>(.*?)<\/h2>/) { "*#{$1.strip}*" }
     result.gsub!(/<i>(.*?)<\/i>/, '\1')
     result.gsub!(/<p>(.*?)<\/p>/) { "p. #{$1.strip}\n" }
     result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
     result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
-    result.gsub!(/<ul>(.*?)<\/ul>/m){"#{$1.strip}\n"}
+    result.gsub!(/<ul>(.*?)<\/ul>/m){ "#{$1.strip}\n" }
 
     result.gsub!(/<li>(.*?)<\/li>/){"\n* #{$1.strip}"}
 
@@ -33,6 +37,28 @@ module Cleanup
     result.gsub!(/([0-9])\,([0-9])/, '\1.\2')
     result
   end
+
+  def format_table(str)
+    return unless str.include?('</table>')
+
+    str.gsub!(/<table.*?>[\s\S]*<\/table>/) do |table|
+      rows = ['']
+
+      table.scan(/<tr>[\s\S]*?<\/tr>/).each do |tr|
+        row = '|'
+
+        tr.scan(/<td.*?>[\s\S]*?<\/td>/).each do |data|
+          header = rows.empty? ? '_. ' : ''
+          row << "#{header}#{data.gsub(/<td.*?>|<\/td>/, '')}|"
+        end
+
+        rows << row
+      end
+
+      rows.join("\n")
+    end
+  end
+
 
   # Some of the values have embedded HTML conent that we need to strip
   def tags_with_html_content
