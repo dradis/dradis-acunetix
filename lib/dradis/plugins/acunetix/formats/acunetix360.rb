@@ -29,7 +29,7 @@ module Dradis::Plugins::Acunetix::Formats
 
       xml.xpath('//acunetix-360/vulnerabilities/vulnerability').each do |vuln_xml|
         issue_text = template_service.process_template(
-          template: '360_vulnerability',
+          template: 'vulnerability_360',
           data: vuln_xml
         )
 
@@ -37,7 +37,7 @@ module Dradis::Plugins::Acunetix::Formats
         issue = content_service.create_issue(text: issue_text, id: type)
 
         evidence_text = template_service.process_template(
-          template: '360_evidence',
+          template: 'evidence_360',
           data: vuln_xml
         )
 
