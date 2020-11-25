@@ -8,7 +8,7 @@ module Acunetix
   # Instead of providing separate methods for each supported property we rely
   # on Ruby's #method_missing to do most of the work.
   class ReportItem
-    include ::Cleanup
+    include Cleanup
 
     attr_accessor :xml
 

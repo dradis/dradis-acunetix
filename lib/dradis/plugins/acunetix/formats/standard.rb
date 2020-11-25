@@ -45,12 +45,12 @@ module Dradis::Plugins::Acunetix::Formats
                               xml_report_item.at_xpath('./ModuleName').text(),
                               xml_report_item.at_xpath('./Name').text()
                             ]
-      logger.info{ "\t\t => Creating new issue (plugin_id: #{plugin_id})" }
+      logger.info { "\t\t => Creating new issue (plugin_id: #{plugin_id})" }
 
       issue_text = template_service.process_template(template: 'report_item', data: xml_report_item)
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
 
-      logger.info{ "\t\t => Creating new evidence" }
+      logger.info { "\t\t => Creating new evidence" }
       evidence_content = template_service.process_template(template: 'evidence', data: xml_report_item)
       content_service.create_evidence(issue: issue, node: scan_node, content: evidence_content)
     end
