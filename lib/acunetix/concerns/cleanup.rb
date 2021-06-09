@@ -22,13 +22,14 @@ module Acunetix
       result.gsub!(/<i>(.*?)<\/i>/, '\1')
       result.gsub!(/<p.*?>(.*?)<\/p>/) { "p. #{$1.strip}\n" }
       result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
-      result.gsub!(/<code>(.*?)<\/code>/, '@\1@')
+      result.gsub!(/<code>(.*?)<\/code>/, "\n\nbc. #{$1.strip}\n\n")
       result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
 
       result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1.strip}"}
       result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1.strip}\n" }
-      result.gsub!(/<li.*?>|<\/li>/, "")
-      result.gsub!(/<ul>|<\/ul>/, "")
+      result.gsub!(/(<ul>)|(<\/ul>|(<ol>)|(<\/ol>))/, "\n")
+      result.gsub!(/<li>/, "\n* ")
+      result.gsub!(/<\/li>/, "\n")
 
       result.gsub!(/<strong>(.*?)<\/strong>/) { "*#{$1.strip}*" }
       result.gsub!(/<span.*?>(.*?)<\/span>/m){"#{$1.strip}\n"}
