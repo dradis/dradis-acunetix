@@ -27,6 +27,8 @@ module Acunetix
 
       result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1.strip}"}
       result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1.strip}\n" }
+      result.gsub!(/<li.*?>|<\/li>/, "")
+      result.gsub!(/<ul>|<\/ul>/, "")
 
       result.gsub!(/<strong>(.*?)<\/strong>/) { "*#{$1.strip}*" }
       result.gsub!(/<span.*?>(.*?)<\/span>/m){"#{$1.strip}\n"}
