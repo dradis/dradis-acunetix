@@ -34,6 +34,8 @@ module Dradis::Plugins::Acunetix::Formats
         )
 
         type = vuln_xml.at_xpath('type').text
+
+        logger.info { "\t\t => Creating new issue: #{type}" }
         issue = content_service.create_issue(text: issue_text, id: type)
 
         evidence_text = template_service.process_template(
@@ -41,6 +43,7 @@ module Dradis::Plugins::Acunetix::Formats
           data: vuln_xml
         )
 
+        logger.info { "\t\t => Creating new evidence" }
         content_service.create_evidence(issue: issue, node: scan_node, content: evidence_text)
       end
     end
