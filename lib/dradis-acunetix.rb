@@ -5,5 +5,7 @@ require 'dradis-plugins'
 require 'dradis/plugins/acunetix'
 
 # load supporting Acunetix classes
+require 'acunetix/concerns/cleanup'
 require 'acunetix/report_item'
 require 'acunetix/scan'
+require 'acunetix/vulnerability'
