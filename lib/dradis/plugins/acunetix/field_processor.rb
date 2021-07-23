@@ -5,9 +5,10 @@ module Dradis::Plugins::Acunetix
 
     def post_initialize(args={})
       @acunetix_object =
-        if data.name == 'Scan'
+        case data.name
+        when 'Scan'
           ::Acunetix::Scan.new(data)
-        elsif data.name == 'vulnerability'
+        when 'vulnerability'
           ::Acunetix::Vulnerability.new(data)
         else
           ::Acunetix::ReportItem.new(data)

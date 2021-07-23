@@ -1,5 +1,6 @@
 ## Dradis Framework 4.00 (XXXX, 2021) #
 
+*   Add support for Acunetix 360
 *   Make Request and Response fields available at the Evidence level
 
 ## Dradis Framework 3.22 (April, 2021) #
