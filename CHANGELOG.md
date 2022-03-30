@@ -1,3 +1,6 @@
+v4.3.0 (XXXX 2022)
+  - Update HTML tag parsing for Acunetix 360
+
 v4.2.0 (February 2022)
   - No changes
 

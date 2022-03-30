@@ -16,10 +16,13 @@ module Acunetix
       result.gsub!(/<b>(.*?)<\/b>/) { "*#{$1.strip}*" }
       result.gsub!(/<br\/>/, "\n")
       result.gsub!(/<div(.*?)>|<\/div>/, '')
+
+      result.gsub!(/<a (.*?)href='(.*?)'><i(.*?)><\/i>(.*?)<\/a>/m) { "\"#{$4}\":#{$2}" }
       result.gsub!(/<a.*?>(.*?)<\/a>/m, '\1')
       result.gsub!(/<font.*?>(.*?)<\/font>/m, '\1')
       result.gsub!(/<h2>(.*?)<\/h2>/) { "*#{$1.strip}*" }
       result.gsub!(/<i>(.*?)<\/i>/, '\1')
+      result.gsub!(/<em>(.*?)<\/em>/) { "_#{$1.strip}_" }
       result.gsub!(/<p.*?>(.*?)<\/p>/) { "p. #{$1.strip}\n" }
       result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
       result.gsub!(/<code>(.*?)<\/code>/) { "\n\nbc. #{$1.strip}\n\n" }
@@ -67,7 +70,7 @@ module Acunetix
 
     # Some of the values have embedded HTML conent that we need to strip
     def tags_with_html_content
-      [:details, :description, :detailed_information, :impact, :recommendation]
+      [:details, :description, :detailed_information, :impact, :recommendation, :remedial_actions, :remedial_procedure, :external_references]
     end
 
     def tags_with_commas
