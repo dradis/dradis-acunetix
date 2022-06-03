@@ -1,8 +1,9 @@
 [v#.#.#] ([month] [YYYY])
   - Registers template mappings locally
+  - Update HTML tag parsing for Acunetix 360
 
 v4.3.0 (April 2022)
-  - Update HTML tag parsing for Acunetix 360
+  - No changes
 
 v4.2.0 (February 2022)
   - No changes
