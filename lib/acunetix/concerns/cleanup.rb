@@ -25,18 +25,21 @@ module Acunetix
       result.gsub!(/<h2>(.*?)<\/h2>/) { "*#{$1.strip}*" }
       result.gsub!(/<i>(.*?)<\/i>/, '\1')
       result.gsub!(/<em>(.*?)<\/em>/) { "_#{$1.strip}_" }
-      result.gsub!(/<p.*?>(.*?)<\/p>/) { "p. #{$1.strip}\n" }
-      result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.\s\s\s\n" }
-      result.gsub!(/<code>(.*?)<\/code>/) { "\n\nbc. #{$1.strip}\n\n" }
-      result.gsub!(/<pre.*?>(.*?)<\/pre>/) { "\n\nbc. #{$1.strip}\n\n" }
-      result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1.strip}\n\np.\s\s\s\n" }
+      result.gsub!(/<p.*?>(.*?)<\/p>/) { "p. #{$1.strip}\n\n" }
+      result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1}\n\np. \n" }
+      result.gsub!(/<code>(.*?)<\/code>/) {  "\n\nbc. #{$1}\n\n" }
+      result.gsub!(/<pre.*?>(.*?)<\/pre>/) { "\n\nbc. #{$1}\n\n" }
+      result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1}\n\np. \n" }
 
-      result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1.strip}"}
-      result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1.strip}\n" }
+      result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1}"}
+      result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1}\n" }
       result.gsub!(/(<ul>)|(<\/ul>|(<ol>)|(<\/ol>))/, "\n")
       result.gsub!(/<li>/, "\n* ")
       result.gsub!(/<\/li>/, "\n")
-      result.gsub!(/<strong>(.*?)<\/strong>/m) { "*#{$1.strip}*" }
+      result.gsub!(/<strong>(.*?)<\/strong>/m) { "*#{$1}*" }
+
+      # Cleanup lingering <p></p>
+      result.gsub!(/<p.*?>(.*?)<\/p>/m) { $1 }
 
       result
     end
