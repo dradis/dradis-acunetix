@@ -1,6 +1,9 @@
 v4.X.X (XXXX 2023)
   - Parse inline code, not just code blocks
 
+v4.8.0 (April 2023)
+  - No changes
+
 v4.7.1 (February 2023)
   - No changes
 
