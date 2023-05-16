@@ -1,4 +1,22 @@
-[v#.#.#] ([month] [YYYY])
+v4.X.X (XXXX 2023)
+  - Parse inline code, not just code blocks
+
+v4.8.0 (April 2023)
+  - No changes
+
+v4.7.1 (February 2023)
+  - No changes
+
+v4.7.0 (February 2023)
+  - No changes
+
+v4.6.0 (November 2022)
+  - No changes
+
+v4.5.0 (August 2022)
+  - No changes
+
+v4.4.0 (June 2022)
   - Registers template mappings locally
   - Update HTML tag parsing for Acunetix 360
 

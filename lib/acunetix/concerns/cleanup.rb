@@ -13,6 +13,7 @@ module Acunetix
       result.gsub!(/&lt;/, '<')
       result.gsub!(/&gt;/, '>')
 
+      result.gsub!(/<h[0-9] >(.*?)<\/h[0-9]>/) { "\n\n*#{$1.strip}*\n\n" }
       result.gsub!(/<b>(.*?)<\/b>/) { "*#{$1.strip}*" }
       result.gsub!(/<br\/>|<br \/>/, "\n")
       result.gsub!(/<div(.*?)>|<\/div>/, '')
