@@ -8,16 +8,11 @@ module Acunetix
 
       format_table(result)
 
-      result.gsub!(/&quot;/, '"')
-      result.gsub!(/&amp;/, '&')
-      result.gsub!(/&lt;/, '<')
-      result.gsub!(/&gt;/, '>')
-
       result.gsub!(/<h[0-9] >(.*?)<\/h[0-9]>/) { "\n\n*#{$1.strip}*\n\n" }
       result.gsub!(/<b>(.*?)<\/b>/) { "*#{$1.strip}*" }
       result.gsub!(/<br\/>|<br \/>/, "\n")
       result.gsub!(/<div(.*?)>|<\/div>/, '')
-      result.gsub!(/<span.*?>(.*?)<\/span>/m){"#{$1.strip}\n"}
+      result.gsub!(/<span.*?>(.*?)<\/span>/m){"#{$1.strip}"}
       result.gsub!(/<span.*?>|<\/span>/, '') #repeating again to deal with nested/empty/incomplete span tags
 
       result.gsub!(/<a (.*?)href='(.*?)'><i(.*?)><\/i>(.*?)<\/a>/m) { "\"#{$4}\":#{$2}" }
@@ -38,6 +33,11 @@ module Acunetix
       result.gsub!(/<li>/, "\n* ")
       result.gsub!(/<\/li>/, "\n")
       result.gsub!(/<strong>(.*?)<\/strong>/m) { "*#{$1}*" }
+
+      result.gsub!(/&quot;/, '"')
+      result.gsub!(/&amp;/, '&')
+      result.gsub!(/&lt;/, '<')
+      result.gsub!(/&gt;/, '>')
 
       # Cleanup lingering <p></p>
       result.gsub!(/<p.*?>(.*?)<\/p>/m) { $1 }
