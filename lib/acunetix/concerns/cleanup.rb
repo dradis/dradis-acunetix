@@ -7,6 +7,7 @@ module Acunetix
       result = source.dup
 
       format_table(result)
+      result = format_list(result)
 
       result.gsub!(/&quot;/, '"')
       result.gsub!(/&amp;/, '&')
@@ -24,16 +25,21 @@ module Acunetix
       result.gsub!(/<p.*?>(.*?)<\/p>/) { "\np. #{$1.strip}\n" }
       result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
       result.gsub!(/<code>(.*?)<\/code>/) { "@#{$1.strip}@" }
-      result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
+      result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1.strip}\n\np. \n" }
 
-      result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1.strip}"}
-      result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1.strip}\n" }
+      result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1}"}
+      result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1}\n" }
       result.gsub!(/(<ul>)|(<\/ul>|(<ol>)|(<\/ol>))/, "\n")
       result.gsub!(/<li>/, "\n* ")
       result.gsub!(/<\/li>/, "\n")
 
       result.gsub!(/<strong>(.*?)<\/strong>/) { "*#{$1.strip}*" }
       result.gsub!(/<span.*?>(.*?)<\/span>/m){"#{$1.strip}\n"}
+      result.gsub!(/<span.*?>|<\/span>/, '') #repeating again to deal with nested/empty/incomplete span tags
+      result.gsub!(/(&#x\d{0,3};)/m) { "==#{$1.strip}==" }
+
+      # Cleanup lingering <p></p>
+      result.gsub!(/<p.*?>(.*?)<\/p>/m) { $1 }
 
       result
     end
@@ -43,6 +49,26 @@ module Acunetix
       result = source.dup
       result.gsub!(/([0-9])\,([0-9])/, '\1.\2')
       result
+    end
+
+    def format_list(str)
+        return str unless str.include?('</ul>') || str.include?('</ol>')
+        deep = 0
+        text = str.split(/<(?<tag>\/?(ul|ol|li)).*?>/)
+        result = ""
+        text.each do |string|
+            string.strip!
+            if (string == 'ul' || string == 'ol')
+                deep = deep + 1
+            elsif (string == '/ul' || string == '/ol')
+                deep = deep - 1
+            elsif (string == 'li')
+                result += "".ljust(deep, "*")
+            elsif (string != '/li' && string.strip != "")
+                result += " " + string + "\n"
+            end
+        end
+        return result
     end
 
     def format_table(str)
