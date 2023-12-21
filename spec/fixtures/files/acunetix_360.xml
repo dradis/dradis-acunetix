@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<acunetix-360>
+  <target>
+    <scan-id>scan id</scan-id>
+    <url>www.google.com/</url>
+    <initiated>06/01/2022</initiated>
+    <duration>00:00:50.9910251</duration>
+  </target>
+  <vulnerabilities>
+    <vulnerability>
+      <LookupId>d202b64e-8451-407c-3680-abdc02f0038f</LookupId>
+      <url>http://aspnet.testsparker.com/blog/%27))%20WAITFOR%20DELAY%20%270%3a0%3a25%27--/</url>
+      <type>ConfirmedBlindSqlInjection</type>
+      <name>Blind SQL Injection</name>
+      <severity>Critical</severity>
+      <certainty>100</certainty>
+      <confirmed>True</confirmed>
+      <state>Present</state>
+      <FirstSeenDate>6/16/2020 1:41:23 PM +00:00</FirstSeenDate>
+      <LastSeenDate>6/16/2020 1:41:23 PM +00:00</LastSeenDate>
+      <classification>
+        <owasp>A1</owasp>
+        <wasc>19</wasc>
+        <cwe>89</cwe>
+        <capec>66</capec>
+        <pci32>6.5.1</pci32>
+        <hipaa>164.306(a), 164.308(a)</hipaa>
+        <owasppc></owasppc>
+        <iso27001>A.14.2.5</iso27001>
+
+
+          <cvss>
+            <vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N</vector>
+
+            <score>
+              <type>Base</type>
+              <value>8.6</value>
+              <severity>High</severity>
+            </score>
+            <score>
+              <type>Temporal</type>
+              <value>8.6</value>
+              <severity>High</severity>
+            </score>
+            <score>
+              <type>Environmental</type>
+              <value>8.6</value>
+              <severity>High</severity>
+            </score>
+
+          </cvss>
+
+
+
+          <cvss31>
+            <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N</vector>
+
+            <score>
+              <type>Base</type>
+              <value>8.6</value>
+              <severity>High</severity>
+            </score>
+            <score>
+              <type>Temporal</type>
+              <value>8.6</value>
+              <severity>High</severity>
+            </score>
+            <score>
+              <type>Environmental</type>
+              <value>8.6</value>
+              <severity>High</severity>
+            </score>
+
+          </cvss31>
+      </classification>
+
+      <description><![CDATA[<p>Acunetix 360 identified a Blind SQL Injection, which occurs when data input by a user is interpreted as an SQL command rather than as normal data by the backend database.</p>
+    <p>This is an extremely common vulnerability and its successful exploitation can have critical implications.</p>
+    <p>Acunetix 360 <strong>confirmed</strong> the vulnerability by executing a test SQL query on the backend database. In these tests, SQL injection was not obvious, but the different responses from the page based on the injection test allowed us to identify and confirm the SQL injection.</p>]]></description>
+      <impact><![CDATA[<div>Depending on the backend database, the database connection settings, and the operating system, an attacker can mount one or more of the following attacks successfully:
+    <ul>
+    <li>Reading, updating and deleting arbitrary data or tables from the database</li>
+    <li>Executing commands on the underlying operating system</li>
+    </ul>
+    </div>]]></impact>
+      <remedial-actions><![CDATA[<div>
+    <ol>
+    <li>See the remedy for solution.</li>
+    <li>If you are not using a database access layer (DAL), consider using one. This will help you centralize the issue. You can also use ORM (<em>object relational mapping</em>). Most of the ORM systems use only parameterized queries and this can solve the whole SQL injection problem.</li>
+    <li>Locate the all dynamically generated SQL queries and convert them to parameterized queries. <em>(If you decide to use a DAL/ORM, change all legacy code to use these new libraries.)</em></li>
+    <li>Use your weblogs and application logs to see if there were any previous but undetected attacks to this resource.</li>
+    </ol>
+    </div>]]></remedial-actions>
+      <exploitation-skills><![CDATA[<div>There are numerous freely available tools to exploit SQL injection vulnerabilities. This is a complex area with many dependencies; however, it should be noted that the numerous resources available in this area have raised both attacker awareness of the issues and their ability to discover and leverage them. SQL injection is one of the most common web application vulnerabilities.</div>]]></exploitation-skills>
+      <remedial-procedure><![CDATA[<div>A robust method for mitigating the threat of SQL injection-based vulnerabilities is to use parameterized queries (<em>prepared statements</em>). Almost all modern languages provide built-in libraries for this. Wherever possible, do not create dynamic SQL queries or SQL queries with string concatenation.</div>]]></remedial-procedure>
+      <remedy-references><![CDATA[<div><ul><li><a target='_blank' href='https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet'><i class='icon-external-link'></i>SQL injection Prevention Cheat Sheet</a></li><li><a target='_blank' href='http://bobby-tables.com'><i class='icon-external-link'></i>A guide to preventing SQL injection</a></li></ul></div>]]></remedy-references>
+      <external-references><![CDATA[<div><ul><li><a target='_blank' href='https://link1.com'><i class='icon-external-link'></i>Link 1</a></li><li><a target='_blank' href='https://link2.com'><i class='icon-external-link'></i>Link 2</a></li></ul></div>]]></external-references>
+      <proof-of-concept></proof-of-concept>
+    </vulnerability>
+  <vulnerabilities>
+</acunetix-360>
