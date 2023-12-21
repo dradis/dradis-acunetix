@@ -1,3 +1,6 @@
+[v#.#.#] ([month] [YYYY])
+  - Add support for nested items in lists
+    
 v4.10.0 (September 2023)
   - Update gemspec links
 
