@@ -1,4 +1,4 @@
-module Dradis::Plugins::Jira
+module Dradis::Plugins::Acunetix
   class MappingService
     def default_mapping
       {
