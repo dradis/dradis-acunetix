@@ -7,7 +7,7 @@ module Dradis::Plugins::Acunetix
           'HTTP Response' => '{{ evidence_360.http_response }}'
         },
         'evidence' => {
-          'Details' => '{{ evidence_360.http_request }}', 
+          'Details' => '{{ evidence.details }}', 
           'Affects' => "|_. Location |_. Parameter |\n
                         | {{ evidence.affects }} | {{ evidence.parameter }} |",
           'AOP' => "|_. File |_. Line |_. Additional |\n
