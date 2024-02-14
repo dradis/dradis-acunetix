@@ -1,5 +1,5 @@
 module Dradis::Plugins::Acunetix
-  class MappingService
+  module Mapping
     def default_mapping
       {
         'evidence_360' => {
