@@ -1,5 +1,0 @@
-#[HTTP Request]#
-%evidence_360.http_request%
-
-#[HTTP Response]#
-%evidence_360.http_response%
