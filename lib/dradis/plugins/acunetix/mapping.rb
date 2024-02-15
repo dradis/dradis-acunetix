@@ -1,6 +1,6 @@
 module Dradis::Plugins::Acunetix
   module Mapping
-    def default_mapping
+    def self.default_mapping
       {
         'evidence_360' => {
           'HTTP Request' => '{{ acunetix[evidence_360.http_request] }}', 
