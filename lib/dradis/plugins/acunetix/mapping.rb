@@ -1,13 +1,18 @@
 module Dradis::Plugins::Acunetix
   module Mapping
+    # source of truth for the mapping component name
+    def self.component_name
+      'acunetix'
+    end
+
     def self.default_mapping
       {
         'evidence_360' => {
-          'HTTP Request' => '{{ acunetix[evidence_360.http_request] }}', 
+          'HTTP Request' => '{{ acunetix[evidence_360.http_request] }}',
           'HTTP Response' => '{{ acunetix[evidence_360.http_response] }}'
         },
         'evidence' => {
-          'Details' => '{{ acunetix[evidence.details] }}', 
+          'Details' => '{{ acunetix[evidence.details] }}',
           'Affects' => "|_. Location |_. Parameter |\n
                         | {{ acunetix[evidence.affects] }} | {{ acunetix[evidence.parameter] }} |",
           'AOP' => "|_. File |_. Line |_. Additional |\n
