@@ -1,25 +1,19 @@
 module Dradis::Plugins::Acunetix
   module Mapping
-    # source of truth for the mapping component name
-    def self.component_name
-      'acunetix'
-    end
-
-    def self.default_mapping
-      {
-        'evidence_360' => {
-          'HTTP Request' => '{{ acunetix[evidence_360.http_request] }}',
+    DEFAULT_MAPPING = {
+        evidence_360: {
+          'HTTP Request' => '{{ acunetix[evidence_360.http_request] }}', 
           'HTTP Response' => '{{ acunetix[evidence_360.http_response] }}'
         },
-        'evidence' => {
-          'Details' => '{{ acunetix[evidence.details] }}',
+        evidence: {
+          'Details' => '{{ acunetix[evidence.details] }}', 
           'Affects' => "|_. Location |_. Parameter |\n
                         | {{ acunetix[evidence.affects] }} | {{ acunetix[evidence.parameter] }} |",
           'AOP' => "|_. File |_. Line |_. Additional |\n
                     | {{ acunetix[evidence.aop_source_file] }} | {{ acunetix[evidence.aop_source_line] }} | {{ acunetix[evidence.aop_additional] }} |",
           'FalsePositive' => '{{ acunetix[evidence.is_false_positive] }}'
         },
-        'report_item' => {
+        report_item: {
           'Title' => '{{ acunetix[report_item.name] }}',
           'Severity' => '{{ acunetix[report_item.severity] }}',
           'Type' => '{{ acunetix[report_item.type] }}',
@@ -36,7 +30,7 @@ module Dradis::Plugins::Acunetix
           'CVEList' => '{{ acunetix[report_item.cve_list] }}',
           'References' => '{{ acunetix[report_item.references] }}'
         },
-        'scan' => {
+        scan: {
           'Title' => 'Acunetix scanner notes ({{ acunetix[scan.start_time] }})',
           'ScanName' => '{{ acunetix[scan.name] }}',
           'StartURL' => '{{ acunetix[scan.start_url] }}',
@@ -45,7 +39,7 @@ module Dradis::Plugins::Acunetix
           'Fingerprint' => "|_. Banner |_. OS |_. Web server |_. Technologies |\n
                             | {{ acunetix[scan.banner] }} | {{ acunetix[scan.os] }} | {{ acunetix[scan.web_server] }} | {{ acunetix[scan.technologies] }} |"
         },
-        'vulnerability_360' => {
+        vulnerability_360: {
           'Title' => '{{ acunetix[vulnerability_360.name] }}',
           'Type' => '{{ acunetix[vulnerability_360.type] }}',
           'URL' => '{{ acunetix[vulnerability_360.url] }}',
@@ -72,7 +66,6 @@ module Dradis::Plugins::Acunetix
           'CVSS3Temporal' => '{{ acunetix[vulnerability_360.cvss31_temporal] }}',
           'CVSS3Environmental' => '{{ acunetix[vulnerability_360.cvss31_environmental] }}'
         }
-      }
-    end
+      }.freeze
   end
 end
