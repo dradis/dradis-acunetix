@@ -2,15 +2,13 @@ module Dradis::Plugins::Acunetix
   module Mapping
     DEFAULT_MAPPING = {
       evidence_360: {
-        'HTTP Request' => '{{ acunetix[evidence_360.http_request] }}', 
+        'HTTP Request' => '{{ acunetix[evidence_360.http_request] }}',
         'HTTP Response' => '{{ acunetix[evidence_360.http_response] }}'
       },
       evidence: {
-        'Details' => '{{ acunetix[evidence.details] }}', 
-        'Affects' => "|_. Location |_. Parameter |\n
-                      | {{ acunetix[evidence.affects] }} | {{ acunetix[evidence.parameter] }} |",
-        'AOP' => "|_. File |_. Line |_. Additional |\n
-                  | {{ acunetix[evidence.aop_source_file] }} | {{ acunetix[evidence.aop_source_line] }} | {{ acunetix[evidence.aop_additional] }} |",
+        'Details' => '{{ acunetix[evidence.details] }}',
+        'Affects' => "|_. Location |_. Parameter |\n| {{ acunetix[evidence.affects] }} | {{ acunetix[evidence.parameter] }} |",
+        'AOP' => "|_. File |_. Line |_. Additional |\n| {{ acunetix[evidence.aop_source_file] }} | {{ acunetix[evidence.aop_source_line] }} | {{ acunetix[evidence.aop_additional] }} |",
         'FalsePositive' => '{{ acunetix[evidence.is_false_positive] }}'
       },
       report_item: {
@@ -34,10 +32,8 @@ module Dradis::Plugins::Acunetix
         'Title' => 'Acunetix scanner notes ({{ acunetix[scan.start_time] }})',
         'ScanName' => '{{ acunetix[scan.name] }}',
         'StartURL' => '{{ acunetix[scan.start_url] }}',
-        'TimeAndFlags' => "|_. Start |_. Finish |_. Total |_. Aborted |_. Responsive |\n
-                          | {{ acunetix[scan.start_time] }} | {{ acunetix[scan.finish_time] }} | {{ acunetix[scan.scan_time] }} | {{ acunetix[scan.aborted] }} | {{ acunetix[scan.responsive] }} |",
-        'Fingerprint' => "|_. Banner |_. OS |_. Web server |_. Technologies |\n
-                          | {{ acunetix[scan.banner] }} | {{ acunetix[scan.os] }} | {{ acunetix[scan.web_server] }} | {{ acunetix[scan.technologies] }} |"
+        'TimeAndFlags' => "|_. Start |_. Finish |_. Total |_. Aborted |_. Responsive |\n| {{ acunetix[scan.start_time] }} | {{ acunetix[scan.finish_time] }} | {{ acunetix[scan.scan_time] }} | {{ acunetix[scan.aborted] }} | {{ acunetix[scan.responsive] }} |",
+        'Fingerprint' => "|_. Banner |_. OS |_. Web server |_. Technologies |\n| {{ acunetix[scan.banner] }} | {{ acunetix[scan.os] }} | {{ acunetix[scan.web_server] }} | {{ acunetix[scan.technologies] }} |"
       },
       vulnerability_360: {
         'Title' => '{{ acunetix[vulnerability_360.name] }}',
