@@ -1,9 +1,9 @@
 class AcunetixTasks < Thor
   include Rails.application.config.dradis.thor_helper_module
 
-  namespace "dradis:plugins:acunetix"
+  namespace 'dradis:plugins:acunetix'
 
-  desc "upload FILE", "upload Standard Acunetix XML results"
+  desc 'upload FILE', 'upload Standard Acunetix XML results'
   def upload(file_path)
     detect_and_set_project_scope
     importer = Dradis::Plugins::Acunetix::Standard::Importer.new(task_options)

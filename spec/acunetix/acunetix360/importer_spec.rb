@@ -16,13 +16,13 @@ module Dradis::Plugins
       @importer.import(file: example_xml)
     end
 
-    it "creates nodes as needed" do
+    it 'creates nodes as needed' do
       expect(@content_service).to receive(:create_node).with(hash_including label: 'http://aspnet.testsparker.com/', type: :host).once
 
       run_import!
     end
 
-    it "creates issues from vulnerability elements" do
+    it 'creates issues from vulnerability elements' do
       expect(@content_service).to receive(:create_issue) do |args|
         expect(args[:text]).to include('Blind SQL Injection')
         expect(args[:id]).to eq('ConfirmedBlindSqlInjection')
@@ -30,13 +30,13 @@ module Dradis::Plugins
 
       expect(@content_service).to receive(:create_issue) do |args|
         expect(args[:text]).to include('Cross-site Scripting')
-        expect(args[:id]).to eq("Xss")
+        expect(args[:id]).to eq('Xss')
       end.once
 
       run_import!
     end
 
-    it "creates evidence from vulnerability elements" do
+    it 'creates evidence from vulnerability elements' do
       expect(@content_service).to receive(:create_evidence) do |args|
         expect(args[:content]).to include('25053.3534')
         expect(args[:issue].id).to eq('ConfirmedBlindSqlInjection')

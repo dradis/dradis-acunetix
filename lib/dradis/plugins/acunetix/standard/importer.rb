@@ -32,7 +32,7 @@ module Dradis::Plugins::Acunetix
         logger.info{'Done.'}
 
         unless xml.xpath('/ScanGroup/Scan').present?
-          error = "No scan results were detected in the uploaded file (/ScanGroup/Scan). Ensure you uploaded an Acunetix XML report."
+          error = 'No scan results were detected in the uploaded file (/ScanGroup/Scan). Ensure you uploaded an Acunetix XML report.'
           logger.fatal{ error }
           content_service.create_note text: error
           return false

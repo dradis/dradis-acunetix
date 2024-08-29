@@ -32,7 +32,7 @@ module Dradis::Plugins::Acunetix
         logger.info{'Done.'}
 
         unless xml.xpath('//acunetix-360').present?
-          error = "No Acunetix360 results were detected in the uploaded file. Ensure you uploaded an Acunetix360 XML report."
+          error = 'No Acunetix360 results were detected in the uploaded file. Ensure you uploaded an Acunetix360 XML report.'
           logger.fatal{ error }
           content_service.create_note text: error
           return false
