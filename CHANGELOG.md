@@ -1,4 +1,4 @@
-v4.XX.X (Month 2024)
+v4.14.0 (Month 2024)
   - Separate general importer into Acunetix360 & Standard importers
 
 v4.13.0 (July 2024)
