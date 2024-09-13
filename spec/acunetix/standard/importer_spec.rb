@@ -68,15 +68,6 @@ module Dradis::Plugins
     end
 
     describe 'Regression tests' do
-      # before(:each) do
-      #   stub_mapping_service
-      #   stub_content_service
-
-      #   @importer = Acunetix::Standard::Importer.new(
-      #     content_service: @content_service,
-      #   )
-      # end
-
       # Regression test for github.com/dradis/dradis-nexpose/issues/1
       describe 'Source HTML parsing' do
         it 'identifies code/pre blocks and replaces them with the Textile equivalent' do
