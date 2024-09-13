@@ -27,13 +27,13 @@ module Dradis::Plugins::Acunetix
       def import(params = {})
         file_content = File.read(params.fetch(:file))
 
-        logger.info {'Parsing Standard Acunetix output file...'}
+        logger.info { 'Parsing Standard Acunetix output file...' }
         @xml = Nokogiri::XML(file_content)
-        logger.info{'Done.'}
+        logger.info { 'Done.' }
 
         unless xml.xpath('/ScanGroup/Scan').present?
           error = 'No scan results were detected in the uploaded file (/ScanGroup/Scan). Ensure you uploaded an Acunetix XML report.'
-          logger.fatal{ error }
+          logger.fatal { error }
           content_service.create_note text: error
           return false
         end

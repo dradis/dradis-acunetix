@@ -1,19 +1,25 @@
-require 'spec_helper'
+# To run, execute from Dradis main app folder:
+# bin/rspec [dradis-acunetix path]/spec/acunetix/acunetix360/importer_spec.rb
+require 'rails_helper'
 require 'ostruct'
+require File.expand_path('../../../support/spec_macros.rb', __FILE__)
+
+include SpecMacros
 
 module Dradis::Plugins
   describe Acunetix::Acunetix360::Importer do
+    before do
+      @fixtures_dir = File.expand_path('../../../fixtures/files/', __FILE__)
+    end
+
     before(:each) do
-      stub_mapping_service
       stub_content_service
 
       @importer = described_class.new(content_service: @content_service)
     end
 
-    let(:example_xml) { 'spec/fixtures/files/acunetix360.xml' }
-
     def run_import!
-      @importer.import(file: example_xml)
+      @importer.import(file: @fixtures_dir + '/acunetix360.xml')
     end
 
     it 'creates nodes as needed' do
@@ -24,12 +30,12 @@ module Dradis::Plugins
 
     it 'creates issues from vulnerability elements' do
       expect(@content_service).to receive(:create_issue) do |args|
-        expect(args[:text]).to include('Blind SQL Injection')
+        expect(args[:text]).to include("#[Title]#\nBlind SQL Injection")
         expect(args[:id]).to eq('ConfirmedBlindSqlInjection')
       end.once
 
       expect(@content_service).to receive(:create_issue) do |args|
-        expect(args[:text]).to include('Cross-site Scripting')
+        expect(args[:text]).to include("#[Title]#\nCross-site Scripting")
         expect(args[:id]).to eq('Xss')
       end.once
 
@@ -38,13 +44,13 @@ module Dradis::Plugins
 
     it 'creates evidence from vulnerability elements' do
       expect(@content_service).to receive(:create_evidence) do |args|
-        expect(args[:content]).to include('25053.3534')
+        expect(args[:content]).to include('POST /blog/%27))%20WAITFOR%20DELAY%20%270%3a0%3a25%27')
         expect(args[:issue].id).to eq('ConfirmedBlindSqlInjection')
         expect(args[:node].label).to eq('http://aspnet.testsparker.com/')
       end.once
 
       expect(@content_service).to receive(:create_evidence) do |args|
-        expect(args[:content]).to include('160.6656')
+        expect(args[:content]).to include('GET /About.aspx HTTP/1.1')
         expect(args[:issue].id).to eq('Xss')
         expect(args[:node].label).to eq('http://aspnet.testsparker.com/')
       end

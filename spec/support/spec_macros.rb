@@ -20,10 +20,4 @@ module SpecMacros
       OpenStruct.new(args)
     end
   end
-
-  def stub_mapping_service
-    allow(Dradis::Plugins::MappingService).to receive(:new).and_return(
-      StubbedMappingService.new
-    )
-  end
 end

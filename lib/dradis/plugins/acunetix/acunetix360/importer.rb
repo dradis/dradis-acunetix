@@ -25,15 +25,15 @@ module Dradis::Plugins::Acunetix
       # the dropdown list and uploads a file.
       # @returns true if the operation was successful, false otherwise
       def import(params = {})
-        file_content    = File.read( params.fetch(:file) )
+        file_content = File.read(params.fetch(:file))
 
-        logger.info{'Parsing Acunetix360 output file...'}
+        logger.info { 'Parsing Acunetix360 output file...' }
         @xml = Nokogiri::XML( file_content )
-        logger.info{'Done.'}
+        logger.info { 'Done.' }
 
         unless xml.xpath('//acunetix-360').present?
           error = 'No Acunetix360 results were detected in the uploaded file. Ensure you uploaded an Acunetix360 XML report.'
-          logger.fatal{ error }
+          logger.fatal { error }
           content_service.create_note text: error
           return false
         end

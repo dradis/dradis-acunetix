@@ -1,19 +1,25 @@
-require 'spec_helper'
+# To run, execute from Dradis main app folder:
+# bin/rspec [dradis-acunetix path]/spec/acunetix/standard/importer_spec.rb
+require 'rails_helper'
 require 'ostruct'
+require File.expand_path('../../../support/spec_macros.rb', __FILE__)
+
+include SpecMacros
 
 module Dradis::Plugins
-
   describe Acunetix::Standard::Importer do
+    before do
+      @fixtures_dir = File.expand_path('../../../fixtures/files/', __FILE__)
+    end
 
     before(:each) do
-      stub_mapping_service
       stub_content_service
 
       @importer = described_class.new(content_service: @content_service)
     end
 
     def run_import!
-      @importer.import(file: 'spec/fixtures/files/simple.acunetix.xml')
+      @importer.import(file: @fixtures_dir + '/simple.acunetix.xml')
     end
 
     it 'creates nodes as needed' do
