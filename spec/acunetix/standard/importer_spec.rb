@@ -2,9 +2,9 @@
 # bin/rspec [dradis-acunetix path]/spec/acunetix/standard/importer_spec.rb
 require 'rails_helper'
 require 'ostruct'
-require File.expand_path('../../../support/spec_macros.rb', __FILE__)
+require File.expand_path('../../../../../dradis-plugins/spec/support/spec_macros.rb', __FILE__)
 
-include SpecMacros
+include Dradis::Plugins::SpecMacros
 
 module Dradis::Plugins
   describe Acunetix::Standard::Importer do
