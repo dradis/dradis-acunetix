@@ -19,7 +19,7 @@ describe Acunetix::Scan do
 
   describe "creating a Scan object with the wrong XML element" do
     it "raises an error" do
-      expect{ described_class.new(@xml) }.to raise_error
+      expect{ described_class.new(@xml) }.to raise_error(RuntimeError, /Invalid XML/)
     end
   end
 
