@@ -37,9 +37,6 @@ module Acunetix
       result.gsub!(/&lt;/, '<')
       result.gsub!(/&gt;/, '>')
 
-      # Cleanup lingering <p></p>
-      result.gsub!(/<p.*?>(.*?)<\/p>/m) { $1 }
-
       result
     end
 
