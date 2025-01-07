@@ -1,3 +1,6 @@
+v4.16.0 (Month 2025)
+  - Update HTML tag parsing for Acunetix 360
+
 v4.15.0 (December 2024)
   - No changes
 
@@ -37,7 +40,6 @@ v4.5.0 (August 2022)
 
 v4.4.0 (June 2022)
   - Registers template mappings locally
-  - Update HTML tag parsing for Acunetix 360
 
 v4.3.0 (April 2022)
   - No changes

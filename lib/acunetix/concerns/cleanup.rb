@@ -10,12 +10,12 @@ module Acunetix
 
       result.gsub!(/<h[0-9] >(.*?)<\/h[0-9]>/) { "\n\n*#{$1.strip}*\n\n" }
       result.gsub!(/<b>(.*?)<\/b>/) { "*#{$1.strip}*" }
-      result.gsub!(/<br\/>|<br \/>/, "\n")
+      result.gsub!(/<br ?\/>/, "\n")
       result.gsub!(/<div(.*?)>|<\/div>/, '')
       result.gsub!(/<span.*?>(.*?)<\/span>/m){"#{$1.strip}"}
       result.gsub!(/<span.*?>|<\/span>/, '') #repeating again to deal with nested/empty/incomplete span tags
 
-      result.gsub!(/<a (.*?)href='(.*?)'><i(.*?)><\/i>(.*?)<\/a>/m) { "\"#{$4}\":#{$2}" }
+      result.gsub!(/<a(.*?)href='(.*?)'><i(.*?)><\/i>(.*?)<\/a>/m) { "\"#{$4}\":#{$2}" }
       result.gsub!(/<a.*?>(.*?)<\/a>/m, '\1')
       result.gsub!(/<font.*?>(.*?)<\/font>/m, '\1')
       result.gsub!(/<h2>(.*?)<\/h2>/) { "*#{$1.strip}*" }
@@ -30,8 +30,6 @@ module Acunetix
       result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1}"}
       result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1}\n" }
       result.gsub!(/(<ul>)|(<\/ul>|(<ol>)|(<\/ol>))/, "\n")
-      result.gsub!(/<li>/, "\n* ")
-      result.gsub!(/<\/li>/, "\n")
       result.gsub!(/<strong>(.*?)<\/strong>/m) { "*#{$1}*" }
 
       result.gsub!(/&quot;/, '"')
