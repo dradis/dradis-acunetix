@@ -13,7 +13,7 @@ module Dradis::Plugins
     end
 
     before(:each) do
-      stub_content_service
+      stub_content_service(Dradis::Plugins::Acunetix)
 
       @importer = described_class.new(content_service: @content_service)
     end

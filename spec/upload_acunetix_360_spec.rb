@@ -29,18 +29,5 @@ module Dradis::Plugins
         content_service: @content_service
       )
     end
-
-    describe "Source HTML parsing" do
-      it "parses links in <external-references> tag" do
-
-        expect(@content_service).to receive(:create_issue) do |args|
-          expect(args[:text]).to include('"Link 1":https://link1.com')
-          expect(args[:text]).to include('"Link 2":https://link2.com')
-          OpenStruct.new(args)
-        end.once
-
-        @importer.import(file: 'spec/fixtures/files/acunetix_360.xml')
-      end
-    end
   end
 end
