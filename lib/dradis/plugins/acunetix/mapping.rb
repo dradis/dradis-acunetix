@@ -60,7 +60,10 @@ module Dradis::Plugins::Acunetix
         'CVSS3Vector' => '{{ acunetix[vulnerability_360.cvss31_vector] }}',
         'CVSS3Base' => '{{ acunetix[vulnerability_360.cvss31_base] }}',
         'CVSS3Temporal' => '{{ acunetix[vulnerability_360.cvss31_temporal] }}',
-        'CVSS3Environmental' => '{{ acunetix[vulnerability_360.cvss31_environmental] }}'
+        'CVSS3Environmental' => '{{ acunetix[vulnerability_360.cvss31_environmental] }}',
+        'Remedial Actions' => '{{ acunetix[vulnerability_360.remedial_actions] }}',
+        'Remedial Procedure' => '{{ acunetix[vulnerability_360.remedial_procedure] }}',
+        'References' => '{{ acunetix[vulnerability_360.external_references] }}',
       }
     }.freeze
 

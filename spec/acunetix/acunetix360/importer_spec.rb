@@ -57,5 +57,15 @@ module Dradis::Plugins
 
       run_import!
     end
+
+    it 'parses links in <external-references> tag' do
+      expect(@content_service).to receive(:create_issue) do |args|
+        expect(args[:text]).to include('"Blind SQL Injection":https://www.owasp.org/index.php/Blind_SQL_Injection')
+        expect(args[:text]).to include('"SQL Injection Cheat Sheet[#Blind]":https://www.acunetix.com/blog/web-security/sql-injection-cheat-sheet/#BlindSQLInjections')
+        OpenStruct.new(args)
+      end
+
+      run_import!
+    end
   end
 end
