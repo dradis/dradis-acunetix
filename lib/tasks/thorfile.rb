@@ -3,6 +3,10 @@ class AcunetixTasks < Thor
 
   namespace 'dradis:plugins:acunetix:upload'
 
+  class_option :state,
+    type: :string,
+    desc: 'The state your issues will be created with. If not provided, the scope will be draft'
+
   desc 'standard FILE', 'upload Standard Acunetix XML results'
   def standard(file_path)
     detect_and_set_project_scope
