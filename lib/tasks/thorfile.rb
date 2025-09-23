@@ -24,7 +24,7 @@ class AcunetixTasks < Thor
   def process_upload(importer, file_path)
     require 'config/environment'
 
-    unless File.exists?(file_path)
+    unless File.exist?(file_path)
       $stderr.puts "** the file [#{file_path}] does not exist"
       exit -1
     end
