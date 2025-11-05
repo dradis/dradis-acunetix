@@ -10,15 +10,6 @@ v4.17.0 (July 2025)
 v4.16.0 (May 2025)
   - No changes
 
-v4.18.0 (September 2025)
-  - No changes
-
-v4.17.0 (July 2025)
-  - No changes
-
-v4.16.0 (May 2025)
-  - No changes
-
 v4.15.0 (December 2024)
   - No changes
 
