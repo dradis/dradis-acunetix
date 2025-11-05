@@ -1,5 +1,14 @@
-v4.16.0 (Month 2025)
+v4.19.0 (XXXX 2025)
   - Update HTML tag parsing for Acunetix 360
+
+v4.18.0 (September 2025)
+  - No changes
+
+v4.17.0 (July 2025)
+  - No changes
+
+v4.16.0 (May 2025)
+  - No changes
 
 v4.15.0 (December 2024)
   - No changes
