@@ -8,32 +8,34 @@ module Acunetix
 
       format_table(result)
 
-      result.gsub!(/&quot;/, '"')
-      result.gsub!(/&amp;/, '&')
-      result.gsub!(/&lt;/, '<')
-      result.gsub!(/&gt;/, '>')
-
       result.gsub!(/<h[0-9] >(.*?)<\/h[0-9]>/) { "\n\n*#{$1.strip}*\n\n" }
       result.gsub!(/<b>(.*?)<\/b>/) { "*#{$1.strip}*" }
-      result.gsub!(/<br\/>/, "\n")
+      result.gsub!(/<br ?\/>/, "\n")
       result.gsub!(/<div(.*?)>|<\/div>/, '')
+      result.gsub!(/<span.*?>(.*?)<\/span>/m){"#{$1.strip}"}
+      result.gsub!(/<span.*?>|<\/span>/, '') #repeating again to deal with nested/empty/incomplete span tags
+
+      result.gsub!(/<a(.*?)href='(.*?)'><i(.*?)><\/i>(.*?)<\/a>/m) { "\"#{$4}\":#{$2}" }
       result.gsub!(/<a.*?>(.*?)<\/a>/m, '\1')
       result.gsub!(/<font.*?>(.*?)<\/font>/m, '\1')
       result.gsub!(/<h2>(.*?)<\/h2>/) { "*#{$1.strip}*" }
       result.gsub!(/<i>(.*?)<\/i>/, '\1')
-      result.gsub!(/<p.*?>(.*?)<\/p>/) { "\np. #{$1.strip}\n" }
-      result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
-      result.gsub!(/<code>(.*?)<\/code>/) { "@#{$1.strip}@" }
-      result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1.strip}\n\np.  \n" }
+      result.gsub!(/<em>(.*?)<\/em>/) { "_#{$1.strip}_" }
+      result.gsub!(/<p.*?>(.*?)<\/p>/) { "p. #{$1.strip}\n\n" }
+      result.gsub!(/<code><pre.*?>(.*?)<\/pre><\/code>/m){|m| "\n\nbc.. #{$1}\n\np. \n" }
+      result.gsub!(/<code>(.*?)<\/code>/) {  "\n\nbc. #{$1}\n\n" }
+      result.gsub!(/<pre.*?>(.*?)<\/pre>/) { "\n\nbc. #{$1}\n\n" }
+      result.gsub!(/<pre.*?>(.*?)<\/pre>/m){|m| "\n\nbc.. #{$1}\n\np. \n" }
 
-      result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1.strip}"}
-      result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1.strip}\n" }
+      result.gsub!(/<li.*?>([\s\S]*?)<\/li>/m){"\n* #{$1}"}
+      result.gsub!(/<ul>([\s\S]*?)<\/ul>/m){ "#{$1}\n" }
       result.gsub!(/(<ul>)|(<\/ul>|(<ol>)|(<\/ol>))/, "\n")
-      result.gsub!(/<li>/, "\n* ")
-      result.gsub!(/<\/li>/, "\n")
+      result.gsub!(/<strong>(.*?)<\/strong>/m) { "*#{$1}*" }
 
-      result.gsub!(/<strong>(.*?)<\/strong>/) { "*#{$1.strip}*" }
-      result.gsub!(/<span.*?>(.*?)<\/span>/m){"#{$1.strip}\n"}
+      result.gsub!(/&quot;/, '"')
+      result.gsub!(/&amp;/, '&')
+      result.gsub!(/&lt;/, '<')
+      result.gsub!(/&gt;/, '>')
 
       result
     end
@@ -68,7 +70,7 @@ module Acunetix
 
     # Some of the values have embedded HTML conent that we need to strip
     def tags_with_html_content
-      [:details, :description, :detailed_information, :impact, :recommendation]
+      [:details, :description, :detailed_information, :impact, :recommendation, :remedial_actions, :remedial_procedure, :external_references]
     end
 
     def tags_with_commas
